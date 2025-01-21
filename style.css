@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1B1F3B;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.navbar-dark .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #FFD700;
+}
+
+.dropdown-menu a {
+color: black;
+}
+.dropdown-menu a:hover {
+    color: #FFD700;
+}
+
+
+
+  #carouselExampleAutoplay {
+    max-width: 800px; /* Adjust the maximum width */
+    margin: 0 auto; /* Center the carousel */
+}
+
+#carouselExampleAutoplay .carousel-inner img {
+    max-height: 400px; /* Limit the height */
+    object-fit: cover; /* Ensure the image covers the area without distortion */
+}
+
+ 
+  
+
+
+#introText {
+    background: #f9f9f9;
+    color: #333;
+    padding: 2rem 0;
+}
+
+#featured-products .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: #1B1F3B;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+footer h5{
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FFD700;
+}
+
+.whatsapp-float {
+    position: fixed;
+    top: 200px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    z-index: 1000; /* Ensure it stays on top of other content */
+    background-color: #25d366; /* WhatsApp green color */
+    border-radius: 50%; /* Circular icon */
+    width: 60px; /* Size of the icon */
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #1da851; /* Darker green on hover */
+}
+
+.whatsapp-icon {
+    width: 30px; /* Size of the WhatsApp icon */
+    height: 30px;
+}
+
+.sale-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.sale-card {
+    width: 30%;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.sale-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.sale-card-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sale-card-img:hover {
+    transform: scale(1.05);
+}
+
+.sale-card-title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sale-card:hover .sale-card-title-overlay {
+    opacity: 1;
+}
+
+.sale-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.limited-offer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sale-card:hover .limited-offer {
+    opacity: 1;
+}
+
+.sale-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.sale-card-description {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.sale-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+.sale-card-discount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-left: 5px;
+}
+
+.sale-card-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.sale-card-btn:hover {
+    background-color: #0056b3;
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 60%;
+    text-align: center;
+}
+
+.close-btn {
+    font-size: 40px;
+    font-weight: bold;
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#modal-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#modal-price,
+#modal-discount {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}

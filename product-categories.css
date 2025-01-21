@@ -1,0 +1,160 @@
+/* General Reset */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    color: #007bff;
+}
+
+/* Header Styles */
+header {
+    background-color: #1B1F3B;
+    color: white;
+    padding: 1rem 0;
+}
+
+header .navbar-brand img {
+    width: 150px;
+    height: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #ffd700;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28100, 100, 100, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Sidebar Styles */
+aside {
+    background-color: #ffffff;
+    border-right: 1px solid #ddd;
+    padding: 20px;
+}
+
+aside h4 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #1B1F3B;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin-bottom: 10px;
+}
+
+aside ul li a {
+    color: #007bff;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+aside ul li a:hover {
+    color: #0056b3;
+    font-weight: bold;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #1B1F3B;
+    margin-bottom: 20px;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card .btn-primary {
+    background-color: #1B1F3B;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.card .btn-primary:hover {
+    background-color: #ffd700;
+    color: #333;
+    transform: scale(1.05);
+}
+
+/* Footer Styles */
+footer {
+    background-color: #1B1F3B;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer h5 {
+    color: #ffd700;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ffd700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    aside {
+        text-align: center;
+        border: none;
+        margin-bottom: 20px;
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .card img {
+        height: 150px;
+    }
+}
