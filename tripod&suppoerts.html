@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="camera.css">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.png" alt="Fotolab Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cart.html">
+                            Cart (<span id="cart-count">0</span>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <aside class="col-3 bg-light p-3">
+            <h4>Brands</h4>
+            <ul class="list-unstyled">
+                <li><a href="#" onclick="filterByBrand('Apkina')">Apkina</a></li>
+                <li><a href="#" onclick="filterByBrand('Weifeng')">Weifeng</a></li>
+                <li><a href="#" onclick="filterByBrand('Jmary')">Jmary</a></li>
+                <li><a href="#" onclick="filterByBrand('Panasonic')">Panasonic</a></li>
+                <li><a href="#" onclick="filterByBrand('GoPro')">GoPro</a></li>
+                <li><a href="#" onclick="filterByBrand('Kingjoy')">Kingjoy</a></li>
+            </ul>
+        </aside>
+
+        <!-- Products Section -->
+        <main class="col-9">
+            <div class="search-bar mb-3">
+                <input id="search-box" type="text" class="form-control" placeholder="Search products..." oninput="searchProducts()">
+            </div>
+            <div class="filter-bar mb-3">
+                <select id="price-filter" class="form-select" onchange="filterByPrice()">
+                    <option value="">Filter by Price</option>
+                    <option value="low">Below ₨ 5000</option>
+                    <option value="medium">₨ 6000 - ₨ 15000</option>
+                    <option value="high">Above ₨ 20000</option>
+                </select>
+            </div>
+            <div id="product-container" class="d-flex flex-wrap gap-3"></div>
+        </main>
+    </div>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20products."
+    target="_blank"
+    class="whatsapp-float">
+    <img src="images/icons8-whatsapp.gif" alt="WhatsApp" class="whatsapp-icon">
+</a>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#introText">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@fotolab.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                <div class="footer-content">
+                    
+                    <div class="location">
+                        <p><strong>Location:</strong></p>
+                        <p>123 Your Street, City Name, Country</p>
+                        <a href="https://www.google.com/maps?q=123+Your+Street,+City+Name,+Country" target="_blank">
+                            View on Google Maps
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <p class="text-center mt-3">&copy; 2025 Fotolab. All rights reserved.</p>
+    </div>
+</footer> 
+
+<script>
+    const products = [
+        { id: 1, name: "BEIKE Q999H Tripod", price: 16500, image: "images/BEIKE Q999H Tripod.webp" },{ id: 2, name: "Weifeng WF-6663A Tripod", price: 12000, image: "images/Weifeng WF-6663A Tripod.jpg" },
+        { id: 3, name: "Weifeng WT-3540 Tripod", price: 6000, image: "images/Weifeng WT-3540 Tripod.webp" },
+        { id: 4, name: "Libek Tripod DCY 6018 Professional Tripod", price: 25000, image: "images/liybek-DCY-6018-tripod.webp" },
+        { id: 5, name: "Kingjoy VT-1500 Pro DSLR Tripod", price: 25000, image: "images/king joy VT-1500 Pro DSLR Tripod.webp" },
+        { id: 6, name: "Kingjoy Vt-2100 Heavy Duty Tripod", price: 22500, image: "images/Kingjoy-Vt-2100-Heavy-Duty-Tripo.webp" },
+        { id: 7, name: "Jmary KP-2234 Camera Tripods Aluminium", price: 7000, image: "images/Jmary KP-2234 Tripod Almunium.webp" },
+        { id: 8, name: "Jmary KP-2209 Horizontal Axis Tripod", price: 4000, image: "images/Jmary KP-2209 1.7M Horizontal Axis Tripod.webp" },
+        {
+                "id":9,
+                "name":"Flexible Tripod (china)",
+                "price":2000,
+                "image":"images/flexible tripod.webp",
+             },
+             {
+                "id":10,
+                "name":"Apkina SAB-233 Tripod",
+                "price":8000,
+                "image":"images/Apkina-233-tripod.webp",
+             },
+             {
+                "id":11,
+                "name":"Joby GorillaPod 1K Flexible Mini Tripod",
+                "price":11000,
+                "image":"images/Apkina-233-tripod.webp",
+             },
+             {
+                "id":12,
+                "name":"Gopro Accesories Kit 50-In-1 Action Camera Accessory Kit for GoPro Models",
+                "price":6000,
+                "image":"images/gopro accessories.jpg",
+             },
+             {
+                "id":13,
+                "name":"Apkina AP600S Tripod",
+                "price":6000,
+                "image":"images/Apkina AP600S Tripod.png",
+             },
+             
+    ];
+
+    let cart = [];
+
+    function generateProductCards(filteredProducts) {
+        const container = document.getElementById('product-container');
+        container.innerHTML = ''; // Clear previous products
+        filteredProducts.forEach(product => {
+            const card = document.createElement('div');
+            card.className = 'product-card card shadow-sm p-3';
+            card.style.width = '18rem';
+            card.innerHTML = `
+                <img src="${product.image}" class="card-img-top" alt="${product.name}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.name}</h5>
+                    <p class="price text-success">₨ ${product.price.toLocaleString()}</p>
+                    <button class="btn btn-primary w-100" onclick="addToCart(${product.id})">Add to Cart</button>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    function addToCart(productId) {
+        const product = products.find(p => p.id === productId);
+        if (product) {
+            cart.push(product);
+            alert(`${product.name} has been added to the cart.`);
+            updateCartCount();
+        }
+    }
+
+    function updateCartCount() {
+        document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    function searchProducts() {
+        const query = document.getElementById('search-box').value.toLowerCase();
+        const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+        generateProductCards(filteredProducts);
+    }
+
+    function filterByPrice() {
+        const filter = document.getElementById('price-filter').value;
+        let filteredProducts = products;
+
+        if (filter === 'low') {
+            filteredProducts = products.filter(product => product.price < 5000);
+        } else if (filter === 'medium') {
+            filteredProducts = products.filter(product => product.price >= 6000 && product.price <= 15000);
+        } else if (filter === 'high') {
+            filteredProducts = products.filter(product => product.price > 20000);
+        }
+
+        generateProductCards(filteredProducts);
+    }
+
+    function filterByBrand(brand) {
+        const filteredProducts = products.filter(product => product.name.includes(brand));
+        generateProductCards(filteredProducts);
+    }
+
+    // Initial load
+    generateProductCards(products);
+
+
+
+</script>
+
+</body>
+</html>
