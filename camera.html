@@ -11,6 +11,8 @@
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 </head>
 <body>
@@ -19,7 +21,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="images/logo.png" alt="Fotolab Logo" class="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +61,7 @@
                     <li><a href="#" onclick="filterByBrand('Panasonic')">Panasonic</a></li>
                     <li><a href="#" onclick="filterByBrand('GoPro')">GoPro</a></li>
                     <li><a href="#"onclick="filterByBrand('Sony')">Sony</a></li>
+                    <li><a href="#"onclick="filterByBrand('DJI')">DJI</a></li>
                 </ul>
             </aside>
     
@@ -85,6 +88,7 @@
     <!-- Product Section -->
     <main>
         <div id="product-container" class="product-container"></div>
+      
     </main>
  
     <a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20products." 
@@ -146,63 +150,62 @@
                 "name": "Nikon D3500 with 18-55mm Lens Kit",
                 "price": 150000,
                 "image": "images/Nikon+D3500+with+18-55mm+Lens+Kit+Price+in+Pakistan,+Specifications,+Features_-_25628.jpg",
-                "description": "The latest Nikon D3500 with 18-55mm Lens Kit price in Pakistan is 150000 which was recently updated on January 2025."
+                
             },
             {
                 "id": 2,
                 "name": "Nikon D850 Body",
                 "price": 160000,
                 "image": "images/Nikon+D850+Body+Price+in+Pakistan,+Specifications,+Features_-_25625.jpg",
-                "description": "The latest Nikon D850 Body price in Pakistan is 160000 which was recently updated on January 2025."
+                
             },
             {
                 "id": 3,
                 "name": "Canon Eos 200D Mark II 18-55mm DSLR Camera",
                 "price": 179999,
                 "image": "images/Canon+Eos+200D+Mark+II+18-55mm+DSLR+Camera+Price+in+Pakistan,+Specifications,+Features_-_22721.jpg",
-                "description": "The latest Canon Eos 200D Mark II 18-55mm DSLR Camera price in Pakistan is 179999 which was recently updated on January 2025."
+                
             },
             {
                 "id": 4,
                 "name": "Blackmagic Design Cinema Camera with PL Mount",
                 "price": 296399,
                 "image":"images/Blackmagic+Design+Cinema+Camera+with+PL+Mount+Price+in+Pakistan,+Specifications,+Features_-_25624.webp",
-                "description": "The latest Blackmagic Design Cinema Camera with PL Mount price in Pakistan is N/A which was recently updated on January 2025."
             },
             {
                 "id": 5,
                 "name": "CANON EOS 3000D DSLR CAMERA WITH EF-S 18-55MM III LENS ",
                 "price": 86000,
                 "image":"images/CANON-EOS-3000D-DSLR-CAMERA-WITH-EF-S-18-55MM-III-LENS.png",
-                "description": "The latest Canon 3000D DSLR Camera with 18-55mm DC III Lens price in Pakistan is 86,000 - PKR which was recently updated on January 2025."
+                
             },
             {
                 "id": 6,
                 "name": "Nikon D5600 18-55mm Kit",
                 "price": 179999,
                 "image":"images/Nikon+D5600+18-55mm+Kit+Price+in+Pakistan,+Specifications,+Features_-_16183.webp",
-                "description": "The latest Nikon D5600 18-55mm Kit price in Pakistan is 179,999 - PKR which was recently updated on January 2025."
+               
             },
             {
                 "id": 7,
                 "name": "Canon 250D with 18-55mm STM Lens Kit",
                 "price": 249999,
                 "image":"images/Canon-250D-DSLR-Camera-optimized.webp",
-                "description": "The latest Canon 250D with 18-55mm STM Lens Kit price in Pakistan is 249,999 which was recently updated on January 2025."
+              
             },
             {
                 "id": 8,
-                "name": "Panasonic Lumix DMC-G7 Mirrorless Micro Four Thirds Digital Camera with 14-42mm Lens Black",
+                "name": "Panasonic Lumix DMC-G7 Mirrorless Micro Four Thirds Digital Camera",
                 "price": 155000,
                 "image":"images/Panasonic+Lumix+DMC-G7+Mirrorless+Micro+Four+Thirds+Digital+Camera+with+14-42mm+Lens+Black+Price+in+Pakistan,+Specifications,+Features_-_25718.webp",
-                "description": "The latest Panasonic Lumix DMC-G7 Mirrorless Micro Four Thirds Digital Camera with 14-42mm Lens Black price in Pakistan is 155,000 which was recently updated on January 2025."
+           
             },
             {
                 "id": 9,
                 "name": "GoPro Hero 13 Action Camera Creator Edition",
                 "price": 209999,
                 "image":"images/GoPro+Hero+13+Action+Camera+Creator+Edition+Price+in+Pakistan,+Specifications,+Features_-_25575.webp",
-                "description": "The latest GoPro Hero 13 Action Camera Creator Edition price in Pakistan is 209,999 - PKR which was recently updated on January 2025."
+               
             },
             {
                 "id": 10,
@@ -216,15 +219,93 @@
                 "name":"Sony Alpha a6500 Mirrorless Digital Camera With 18-135mm Lens",
                 "price": 215000,
                 "image":"images/Sony-Alpha-A6500-Mirrorless-Digital-Camera-With-18-135mm-Lens.jpg",
-                "description":"Stable, fast, and versatile, the Alpha a6500 from Sony is an apt APS-C-format mirrorless camera well-suited for both photo and video applications."
-            },
+             },
             {
                 "id": 12,
                 "name":"GoPro Hero 7 Black",
                 "price": 55000,
                 "image":"images/gopro hero 7.jpg",
-                "description": "The latest GoPro Hero 7 Action Camera Creator Edition price in Pakistan is 55,000 - PKR which was recently updated on January 2025."
+         
             },
+            {
+                "id": 13,
+                "name":"Blackmagic Design URSA Mini 4K Digital Cinema Camera (PL-Mount)",
+                "price": 379000,
+                "image":"images/Blackmagic Design URSA Mini 4K Digital Cinema Camera PL-Mount1.jpg",
+         
+            },
+            {
+                "id": 14,
+                "name":"Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)",
+                "price": 540000,
+                "image":"images/Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)6.jpg",
+         
+            },
+            {
+                "id": 15,
+                "name":"Blackmagic 6K Pro Pocket Cinema Camera (Canon EF)",
+                "price": 46000,
+                "image":"images/pcfnblackmagic-pocket-cinema-camera 6k-pro-3-800x800-0-_112_11zon.webp",
+         
+            },
+            {
+                "id": 16,
+                "name":"Blackmagic Design Studio Camera HD",
+                "price": 185000,
+                "image":"images/Blackmagic Design Studio Camera HD1.jpg"
+            },
+            {
+                "id": 17,
+                "name":"Panasonic V260 Full HD Camcorder",
+                "price": 19200,
+                "image":"images/1672834787panasonic-v260-full-hd-camcorder-pakistan-img1-800x800-0-_11zon.webp"
+            },
+            {
+                "id": 18,
+                "name":"Panasonic HC-MDH2 AVCHD Shoulder Mount Camcorder",
+                "price": 87000,
+                "image":"images/Panasonic HC-MDH2 AVCHD Shoulder Mount Camera.jpg"
+            },
+            {
+                "id": 19,
+                "name":"GoPro Hero 4k Compact Action Camera",
+                "price": 64999,
+                "image":"images/gopro hero 4K Compact Action Camera.webp"
+            },
+            {
+                "id": 20,
+                "name":"DJI Osmo Pocket 3 Creator Combo",
+                "price": 16999,
+                "image":"images/DJI Osmo Pocket 3 creator combo.webp"
+            },
+            {
+                "id": 21,
+                "name":"DJI Osmo Pocket Gimbal",
+                "price": 58000,
+                "image":"images/1673327246DJI Osmo Pocket Gimbal1.jpg"
+            },
+            {
+                "id": 22,
+                "name":"DJI Osmo Pro Combo",
+                "price": 28000,
+                "image":"images/Osmo Pro Combo1.jpg"
+            },
+            {
+                "id": 23,
+                "name":"Osmo Action 5 Pro Standard Combo",
+                "price": 98399,
+                "image":"images/Osmo Action 5 Pro Standard-bnw_11zon.webp"
+            },
+            {
+                "id": 24,
+                "name":"Sony Alpha a9 Mirrorless Digital Camera",
+                "price": 53399,
+                "image":"images/Sony Alpha a9 Mirrorless Digital Camera (Body Only)1.jpg"
+            },
+
+     
+        
+     
         ];
 
         const container = document.getElementById('product-container');
@@ -237,12 +318,24 @@
                 card.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
-                    <p>${product.description}</p>
+               
                     <p class="price">₨ ${product.price.toLocaleString()}</p>
-                `;
+           <button class="add-to-cart-btn" onclick="viewProduct(${product.id})">View Details</button>
+
+                 `;
+
+
                 container.appendChild(card);
             });
         };
+
+
+function viewProduct(productId) {
+    // Redirect to the product details page with the product id in the URL
+    window.location.href = `product-details.html?id=${productId}`;
+}
+
+
 
         generateProductCards(products);
 

@@ -1,0 +1,52 @@
+/* Ensure the table takes full width and is responsive */
+#comparison-result table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style table headers */
+#comparison-result th {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+/* Style table cells */
+#comparison-result td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* Ensure the text doesn't overflow in table cells */
+#comparison-result td {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 200px; /* Limit the width of the content */
+}
+
+/* Responsive styling: make table scrollable on small screens */
+@media (max-width: 768px) {
+    #comparison-result table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    #comparison-result th, #comparison-result td {
+        white-space: nowrap;
+    }
+}
+
+/* Optional: Style for the comparison result section */
+.comparison-result {
+    display: none;
+    margin-top: 20px;
+}
+
+/* Show comparison result when it's available */
+.comparison-result:not(.hidden) {
+    display: block;
+}

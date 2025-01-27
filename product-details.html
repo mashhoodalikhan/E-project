@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Fotolab Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="product.html">Cameras</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lenses</a></li>
+                                <li><a class="dropdown-item" href="product.html">Accessories</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lighting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container product-header">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="product-image" class="product-image" src="" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h2 id="product-name" class="product-title"></h2>
+                <p id="product-price" class="product-price"></p>
+                <p id="product-description" class="product-description"></p>
+                <div class="product-specs">
+                    <h4>Specifications:</h4>
+                    <ul id="product-specs">
+                        <!-- Dynamic list of product specs will go here -->
+                    </ul>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="compare-btn" onclick="addToCompare('product1', 'Product Name 1', 100, 'images/product1.jpg')">Compare</button>
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="compareSection" class="container mt-5" style="display: none;">
+        <h4>Compare Products:</h4>
+        <div class="row" id="compareContainer">
+            <!-- Products will be displayed here -->
+        </div>
+        <button onclick="clearComparison()">Clear Comparison</button>
+    </div>
+    
+    
+
+    <div class="reviews mt-5">
+        <h4>Customer Reviews:</h4>
+        <div class="review-item">
+            <div class="review-header">
+                <strong>John Doe</strong> 
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Great camera! Love the quality. The autofocus is amazing, and it’s perfect for both photography and videography. Highly recommend!"</p>
+            <span class="review-date">Posted on: Jan 15, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Jane Smith</strong>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Good performance, but a bit expensive. It works well for most of my photography needs, though I wish the battery lasted longer."</p>
+            <span class="review-date">Posted on: Jan 18, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Mike Lee</strong>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Perfect for my needs! I’m a professional photographer, and this camera does an amazing job for both stills and video. Worth every penny!"</p>
+            <span class="review-date">Posted on: Jan 20, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Emily Brown</strong>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Nice build quality and fast autofocus, but the size is a bit bulky for my tastes. It’s still an excellent camera overall!"</p>
+            <span class="review-date">Posted on: Jan 22, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Chris Johnson</strong>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"I love this camera! The image stabilization is fantastic, and I’ve been able to shoot smooth videos even in challenging conditions. Highly recommended!"</p>
+            <span class="review-date">Posted on: Jan 24, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Alice Williams</strong>
+                <span class="review-rating">⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"The camera quality is great, but the learning curve was steep. Took me a while to figure out all the features." </p>
+            <span class="review-date">Posted on: Jan 26, 2025</span>
+        </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#introText">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@fotolab.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                
+                    <div class="footer-content">
+                    
+                        <div class="location">
+                            <p><strong>Location:</strong></p>
+                            <p>123 Your Street, City Name, Country</p>
+                            <a href="https://www.google.com/maps?q=123+Your+Street,+City+Name,+Country" target="_blank">
+                                View on Google Maps
+                            </a>
+                        </div>
+                    </div>
+                
+                
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <p class="text-center mt-3">&copy; 2025 Fotolab. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const products = [
+    {
+    "id": 1,
+    "name": "Nikon D3500 with 18-55mm Lens Kit",
+    "price": 150000,
+    "image": "images/Nikon+D3500+with+18-55mm+Lens+Kit+Price+in+Pakistan,+Specifications,+Features_-_25628.jpg",
+    "description": "The Nikon D3500 with 18-55mm Lens Kit is a perfect entry-level DSLR for budding photographers. Offering 24.2MP resolution, Full HD video recording, and long-lasting battery life, it's designed to deliver excellent image quality in a lightweight, portable package.",
+    "specs": [
+        "24.2MP DX-Format CMOS Sensor",
+        "Full HD 1080p Video Recording",
+        "11-Point Autofocus System",
+        "ISO Range: 100-25,600 for Low-Light Performance",
+        "5fps Continuous Shooting",
+        "Compact and Lightweight Design",
+        "Long Battery Life for Extended Shoots",
+        "Built-in Bluetooth for Easy Sharing"
+    ]
+},
+
+{
+    "id": 2,
+    "name": "Nikon D850 Body",
+    "price": 160000,
+    "image": "images/Nikon+D850+Body+Price+in+Pakistan,+Specifications,+Features_-_25625.jpg",
+    "description": "The Nikon D850 Body is a professional-grade DSLR offering remarkable image quality and performance. With its 45.7MP full-frame sensor, 4K UHD video capabilities, and impressive autofocus system, the D850 is perfect for photographers and videographers who demand the highest level of detail.",
+    "specs": [
+        "45.7MP FX-Format BSI CMOS Sensor",
+        "4K UHD Video Recording",
+        "153-Point Autofocus System with 99 Cross-Type Sensors",
+        "ISO Range: 64-25,600, Expandable to 32-102,400",
+        "7fps Continuous Shooting, 9fps with Battery Grip",
+        "High-Resolution 3.2-inch Tilting LCD Touchscreen",
+        "Built-in Wi-Fi and Bluetooth Connectivity",
+        "Dual Card Slots (XQD and SD)"
+    ]
+},
+
+{
+    "id": 3,
+    "name": "Canon EOS 200D Mark II 18-55mm DSLR Camera",
+    "price": 179999,
+    "image": "images/Canon+Eos+200D+Mark+II+18-55mm+DSLR+Camera+Price+in+Pakistan,+Specifications,+Features_-_22721.jpg",
+    "description": "The Canon EOS 200D Mark II with 18-55mm lens kit is an ideal entry-level DSLR offering impressive features for beginners and enthusiasts alike. It boasts a 24.1MP APS-C sensor, Full HD 1080p video recording, and a Dual Pixel CMOS autofocus system for smooth and quick focus during live view and video shooting.",
+    "specs": [
+        "24.1MP APS-C CMOS Sensor",
+        "Full HD 1080p Video Recording at 60fps",
+        "Dual Pixel CMOS Autofocus for Fast Focus",
+        "3.0-inch Vari-Angle Touchscreen LCD",
+        "9-Point Phase Detection Autofocus System",
+        "Continuous Shooting at 5fps",
+        "ISO Range: 100-25,600 for Low-Light Performance",
+        "Built-in Wi-Fi and Bluetooth for Easy Sharing"
+    ]
+},
+
+        {
+    "id": 4,
+    "name": "Blackmagic Design Cinema Camera with PL Mount",
+    "description": "The Blackmagic Design Cinema Camera with PL Mount is designed for professional cinema-quality video production. It features a 2.5K resolution sensor, 13 stops of dynamic range, and PL lens compatibility, perfect for capturing stunning images with cinematic depth.",
+    "price": 296399,
+    "image": "images/Blackmagic+Design+Cinema+Camera+with+PL+Mount+Price+in+Pakistan,+Specifications,+Features_-_25624.webp",
+    "specs": [
+        "2.5K Image Sensor (2432 x 1366 Resolution)",
+        "13 Stops of Dynamic Range",
+        "PL Lens Mount for Cinema Lenses",
+        "Records 12-bit RAW, ProRes, and DNxHD",
+        "5-inch Touchscreen for Monitoring and Metadata Entry",
+        "3G-SDI Output for Monitoring",
+        "2.5\" SSD Recorder for High Data Rates",
+        "DaVinci Resolve Included for Color Grading",
+        "Compact, Rugged Design for Professional Use"
+    ]
+},
+{
+    "id": 5,
+    "name": "CANON EOS 3000D DSLR CAMERA WITH EF-S 18-55MM III LENS",
+    "description": "The Canon EOS 3000D is an entry-level DSLR designed for photography enthusiasts. It features an 18MP APS-C CMOS sensor and DIGIC 4+ image processor, delivering excellent image quality and Full HD video recording. Paired with the EF-S 18-55mm III lens, it's perfect for capturing a variety of subjects.",
+    "price": 86000,
+    "image": "images/CANON-EOS-3000D-DSLR-CAMERA-WITH-EF-S-18-55MM-III-LENS.png",
+    "specs": [
+        "18MP APS-C CMOS Sensor",
+        "DIGIC 4+ Image Processor",
+        "Full HD 1080p Video Recording",
+        "ISO Range of 100-6400 (Expandable to 12800)",
+        "Built-in Wi-Fi for Image Sharing",
+        "9-point Autofocus System",
+        "3.0-inch LCD Monitor",
+        "Compatible with EF and EF-S Lenses",
+        "Scene Intelligent Auto Mode"
+    ]
+},
+{
+    "id": 6,
+    "name": "Nikon D5600 18-55mm Kit",
+    "description": "The Nikon D5600 is a versatile DSLR camera designed for enthusiasts and professionals alike. It features a 24.2MP DX-format CMOS sensor and EXPEED 4 image processor for stunning photos and Full HD videos. Paired with the 18-55mm lens, it is ideal for capturing a wide range of scenes, from landscapes to portraits.",
+    "price": 179999,
+    "image": "images/Nikon+D5600+18-55mm+Kit+Price+in+Pakistan,+Specifications,+Features_-_16183.webp",
+    "specs": [
+        "24.2MP DX-Format CMOS Sensor",
+        "EXPEED 4 Image Processor",
+        "Full HD 1080p Video Recording at 60fps",
+        "3.2-inch Vari-Angle Touchscreen LCD",
+        "ISO Range of 100-25600",
+        "39-point Autofocus System",
+        "Built-in SnapBridge Bluetooth and Wi-Fi",
+        "5fps Continuous Shooting Speed",
+        "Compact and Lightweight Design"
+    ]
+},
+{
+    "id": 7,
+    "name": "Canon 250D with 18-55mm STM Lens Kit",
+    "description": "The Canon EOS 250D is a compact, lightweight DSLR with advanced features for photographers and vloggers. It offers a 24.1MP APS-C CMOS sensor and DIGIC 8 processor for stunning image quality and 4K video recording. The included 18-55mm STM lens ensures smooth and quiet autofocus for both photos and videos.",
+    "price": 249999,
+    "image": "images/Canon-250D-DSLR-Camera-optimized.webp",
+    "specs": [
+        "24.1MP APS-C CMOS Sensor",
+        "DIGIC 8 Image Processor",
+        "4K Video Recording and 4K Time-Lapse",
+        "Dual Pixel CMOS Autofocus",
+        "3.0-inch Vari-Angle Touchscreen LCD",
+        "ISO Range of 100-25600 (Expandable to 51200)",
+        "Wi-Fi and Bluetooth Connectivity",
+        "Creative Assist and Guided UI Modes",
+        "Compact and Travel-Friendly Design"
+    ]
+},
+{
+    "id": 8,
+    "name": "Panasonic Lumix DMC-G7 Mirrorless Micro Four Thirds Digital Camera",
+    "description": "The Panasonic Lumix DMC-G7 is a versatile mirrorless camera designed for both photography and videography enthusiasts. Featuring a 16MP Live MOS sensor and 4K video capabilities, it delivers stunning image quality. Paired with a 14-42mm lens, it's perfect for capturing everything from wide landscapes to detailed portraits.",
+    "price": 155000,
+    "image": "images/Panasonic+Lumix+DMC-G7+Mirrorless+Micro+Four+Thirds+Digital+Camera+with+14-42mm+Lens+Black+Price+in+Pakistan,+Specifications,+Features_-_25718.webp",
+    "specs": [
+        "16MP Live MOS Sensor",
+        "Venus Engine 9 Image Processor",
+        "4K UHD Video Recording at 30/24fps",
+        "3.0-inch Free-Angle Touchscreen LCD",
+        "Depth-from-Defocus Autofocus Technology",
+        "Built-in Wi-Fi for Instant Sharing",
+        "ISO Range of 200-25600 (Expandable to 100)",
+        "Burst Shooting at 8fps",
+        "Compact and Lightweight Mirrorless Design"
+    ]
+},
+{
+    "id": 9,
+    "name": "GoPro Hero 13 Action Camera Creator Edition",
+    "description": "The GoPro Hero 13 Creator Edition is the ultimate action camera for creators and adventurers. With cutting-edge 5.3K video resolution, advanced image stabilization, and enhanced low-light performance, it ensures stunning visuals in any environment. The Creator Edition includes accessories for vlogging, such as an extended battery, media mod, and lighting options.",
+    "price": 209999,
+    "image": "images/GoPro+Hero+13+Action+Camera+Creator+Edition+Price+in+Pakistan,+Specifications,+Features_-_25575.webp",
+    "specs": [
+        "5.3K60 Ultra HD Video Resolution",
+        "23MP Still Photos with HDR",
+        "HyperSmooth 5.0 Advanced Stabilization",
+        "Waterproof up to 33ft (10m) Without Housing",
+        "Front and Rear Touchscreens for Versatility",
+        "Voice Control and Quick Capture Features",
+        "Built-in Wi-Fi and Bluetooth Connectivity",
+        "TimeWarp 4.0 and Live Streaming Capabilities",
+        "Included Creator Accessories: Media Mod, LED Light, and Enduro Battery"
+    ]
+},
+{
+    "id": 10,
+    "name": "Sony a7 IV Mirrorless Digital Camera (Body Only)",
+    "price": 570000,
+    "image": "images/sony_ilce_7m4_b_alpha_a7_iv_mirrorless_1634812545_1667800.jpg",
+    "description": "An all-arounder that pushes beyond basic, the Sony a7 IV does double duty with strong stills and video performance. An advanced hybrid mirrorless camera, the a7 IV has the resolution and AF performance that appeals to photographers along with robust 4K 60p video recording for filmmakers and content creators.",
+    "specs": [
+        "33MP Full-Frame Exmor R CMOS Sensor",
+        "Dual Native ISO for Enhanced Low-Light Performance",
+        "Advanced Real-Time Eye Autofocus for Humans and Animals",
+        "4K 60p Video Recording with 10-bit 4:2:2",
+        "15 Stops of Dynamic Range for Detailed Images",
+        "5-Axis In-Body Image Stabilization",
+        "3.0-inch Vari-Angle Touchscreen LCD",
+        "Dual Card Slots for CFexpress Type A and SD UHS-II",
+        "Built-in Wi-Fi and Bluetooth for Seamless Connectivity"
+    ]
+},
+{
+    "id": 11,
+    "name": "Sony Alpha a6500 Mirrorless Digital Camera With 18-135mm Lens",
+    "price": 215000,
+    "image": "images/Sony-Alpha-A6500-Mirrorless-Digital-Camera-With-18-135mm-Lens.jpg",
+    "description": "The Sony Alpha a6500 is a compact, high-performance mirrorless camera designed for both enthusiasts and professionals. With its 24.2MP APS-C sensor and 4K video recording, this camera offers incredible detail and versatility. Paired with the 18-135mm lens, it provides excellent zoom capability for a wide variety of shooting scenarios.",
+    "specs": [
+        "24.2MP APS-C Exmor CMOS Sensor",
+        "BIONZ X Image Processor",
+        "4K UHD Video Recording with 100Mbps",
+        "5-Axis In-Body Image Stabilization",
+        "425 Phase-Detection Autofocus Points",
+        "ISO Range of 100-25600 (Expandable to 51200)",
+        "3.0-inch Tilting Touchscreen LCD",
+        "Continuous Shooting at 11fps",
+        "Built-in Wi-Fi and NFC Connectivity",
+        "18-135mm Lens with Optical SteadyShot"
+    ]
+},
+{
+    "id": 12,
+    "name": "GoPro Hero 7 Black",
+    "price": 55000,
+    "image": "images/gopro hero 7.jpg",
+    "description": "The GoPro Hero 7 Black is an action camera designed for capturing immersive video and photo content in any environment. With 4K video capabilities, HyperSmooth stabilization, and rugged, waterproof design, it’s perfect for athletes, travelers, and content creators looking to capture high-quality footage on the go.",
+    "specs": [
+        "4K UHD Video at 60fps",
+        "12MP Photo with SuperPhoto and HDR",
+        "HyperSmooth 2.0 Video Stabilization",
+        "Waterproof up to 33ft (10m)",
+        "Voice Control for Hands-Free Operation",
+        "Live Streaming and TimeWarp Features",
+        "Touchscreen LCD for Easy Operation",
+        "Built-in GPS for Location Tagging",
+        "Wi-Fi and Bluetooth Connectivity"
+    ]
+},
+{
+    "id": 13,
+    "name": "Blackmagic Design URSA Mini 4K Digital Cinema Camera (PL-Mount)",
+    "price": 379000,
+    "image": "images/Blackmagic Design URSA Mini 4K Digital Cinema Camera PL-Mount1.jpg",
+    "description": "The Blackmagic Design URSA Mini 4K Digital Cinema Camera (PL-Mount) offers a professional-level solution for filmmakers. With a 4K Super 35mm sensor, cinematic image quality, and a range of connectivity options, it’s perfect for capturing high-end video for a variety of projects. The PL mount ensures compatibility with a wide range of cinema lenses, making it an essential tool for serious videographers and filmmakers.",
+    "specs": [
+        "4K Super 35mm CMOS Sensor",
+        "12 Stops of Dynamic Range",
+        "Global Shutter for Superior Image Quality",
+        "PL Lens Mount for Professional Cinema Lenses",
+        "12-bit CinemaDNG RAW and ProRes 422 Recording",
+        "UHD 4K 60fps Recording",
+        "5-inch Touchscreen LCD for Monitoring",
+        "Dual CFast 2.0 Card Slots for Storage",
+        "3G-SDI and HDMI Outputs",
+        "Built-in XLR Audio Inputs"
+    ]
+},
+{
+    "id": 14,
+    "name": "Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)",
+    "price": 540000,
+    "image": "images/Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)6.jpg",
+    "description": "The Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount) delivers incredible 4K video quality and cinematic production capabilities. With its EF lens mount, you can use a wide variety of lenses to capture stunning footage. Ideal for both independent filmmakers and professionals, it offers flexible recording options and high-end performance.",
+    "specs": [
+        "4K Super 35mm CMOS Sensor",
+        "EF Lens Mount for Wide Lens Compatibility",
+        "12 Stops of Dynamic Range",
+        "UHD 4K 60fps Recording in ProRes or CinemaDNG RAW",
+        "5-inch Fold-Out Touchscreen LCD",
+        "Dual CFast 2.0 Card Slots for High-Speed Data Storage",
+        "Built-in XLR Audio Inputs",
+        "3G-SDI and HDMI Outputs for External Monitoring",
+        "Highly Customizable Camera Body Design"
+    ]
+},
+{
+    "id": 15,
+    "name": "Blackmagic 6K Pro Pocket Cinema Camera (Canon EF)",
+    "price": 46000,
+    "image": "images/pcfnblackmagic-pocket-cinema-camera 6k-pro-3-800x800-0-_112_11zon.webp",
+    "description": "The Blackmagic 6K Pro Pocket Cinema Camera (Canon EF) is designed for filmmakers who need a compact, yet powerful camera. With its 6K resolution and Super 35mm sensor, it delivers cinematic image quality with stunning detail. The EF lens mount allows for compatibility with a wide range of lenses, providing flexibility for different shooting needs.",
+    "specs": [
+        "6K Super 35mm CMOS Sensor",
+        "Canon EF Lens Mount for Versatile Lens Compatibility",
+        "13 Stops of Dynamic Range for Enhanced Detail",
+        "ProRes 422 and CinemaDNG RAW Recording Options",
+        "5-inch HDR Touchscreen LCD",
+        "Built-in ND Filters for Exposure Control",
+        "Dual CFast 2.0 and SD Card Slots for Storage",
+        "12V Power Output for External Accessories",
+        "Compact and Lightweight Design for Portability"
+    ]
+},
+
+    {
+        "id": 16,
+        "name": "Blackmagic Design Studio Camera HD",
+        "price": 185000,
+        "image": "images/Blackmagic Design Studio Camera HD1.jpg",
+        "description": "The Blackmagic Design Studio Camera HD is a professional live production camera that offers stunning HD quality. Designed for broadcast and live events, it features a high-quality 10-bit 4:2:2 video output, built-in talkback, and a large 7-inch LCD screen for precise monitoring.",
+        "specs": [
+            "HD 1080p Video Output",
+            "Built-in 7-inch LCD for Monitoring",
+            "10-bit 4:2:2 Video Output",
+            "Broadcast-Grade Features for Live Production",
+            "Built-in Talkback System",
+            "Universal Control Panel Compatibility",
+            "Interchangeable Lens Mount"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Panasonic V260 Full HD Camcorder",
+        "price": 19200,
+        "image": "images/1672834787panasonic-v260-full-hd-camcorder-pakistan-img1-800x800-0-_11zon.webp",
+        "description": "The Panasonic V260 Full HD Camcorder is an affordable and reliable option for capturing high-quality video. With Full HD recording, 50x optical zoom, and optical image stabilization, it's perfect for everyday videography and family events.",
+        "specs": [
+            "Full HD 1080p Video Recording",
+            "50x Optical Zoom for Flexibility",
+            "Optical Image Stabilization for Smooth Footage",
+            "Large 2.7-inch LCD Screen",
+            "Compact and Lightweight Design",
+            "Easy Sharing with Built-in Wi-Fi"
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Panasonic HC-MDH2 AVCHD Shoulder Mount Camcorder",
+        "price": 87000,
+        "image": "images/Panasonic HC-MDH2 AVCHD Shoulder Mount Camera.jpg",
+        "description": "The Panasonic HC-MDH2 AVCHD Shoulder Mount Camcorder is designed for professional videographers. Featuring a large 1/3-inch sensor, 20x optical zoom, and Full HD recording, it provides exceptional image quality and comfort for long-duration shoots.",
+        "specs": [
+            "Full HD 1080p AVCHD Recording",
+            "20x Optical Zoom Lens",
+            "1/3-inch Sensor for Enhanced Low Light Performance",
+            "Shoulder Mount for Comfortable Shooting",
+            "Manual Control Options for Advanced Users",
+            "Built-in Wi-Fi for Easy Sharing"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "GoPro Hero 4k Compact Action Camera",
+        "price": 64999,
+        "image": "images/gopro hero 4K Compact Action Camera.webp",
+        "description": "The GoPro Hero 4k Compact Action Camera is designed for high-performance and versatility. It supports 4K video recording and is built to withstand the most challenging environments. It's the ideal camera for action sports, travel, and adventures.",
+        "specs": [
+            "4K Video Recording at 30fps",
+            "12MP Still Photos with Burst Mode",
+            "Waterproof up to 40m (131ft)",
+            "Built-in Wi-Fi and Bluetooth",
+            "Wide-Angle Lens for Immersive Footage",
+            "Rugged and Compact Design for Extreme Use"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "DJI Osmo Pocket 3 Creator Combo",
+        "price": 16999,
+        "image": "images/DJI Osmo Pocket 3 creator combo.webp",
+        "description": "The DJI Osmo Pocket 3 Creator Combo is a compact, handheld gimbal camera designed for smooth and stable footage. With 4K video, intelligent features, and creative modes, it's the perfect tool for vloggers, creators, and adventurers.",
+        "specs": [
+            "4K Video Recording at 60fps",
+            "3-Axis Gimbal for Smooth Footage",
+            "Compact Design for Portability",
+            "AI-Powered Intelligent Features",
+            "Wide 80° Field of View",
+            "Built-in 3D Audio"
+        ]
+    },
+    {
+        "id": 21,
+        "name": "DJI Osmo Pocket Gimbal",
+        "price": 58000,
+        "image": "images/1673327246DJI Osmo Pocket Gimbal1.jpg",
+        "description": "The DJI Osmo Pocket Gimbal is an ultra-portable 3-axis gimbal camera that delivers professional-grade stabilization. It’s designed for vloggers and creators who want to capture smooth, cinematic footage with ease, even on the go.",
+        "specs": [
+            "4K Video Recording at 60fps",
+            "3-Axis Gimbal for Smooth Footage",
+            "Compact and Lightweight Design",
+            "Real-Time Tracking and Face Detection",
+            "ActiveTrack and Time-Lapse Features",
+            "Built-in Stabilization for Clear Video"
+        ]
+    },
+    {
+    "id": 22,
+    "name": "DJI Osmo Pro Combo",
+    "price": 28000,
+    "image": "images/Osmo Pro Combo1.jpg",
+    "description": "The DJI Osmo Pro Combo is a compact gimbal camera designed for creators who need professional-grade stabilization and 4K video recording. Featuring advanced stabilization technology and versatile shooting modes, it’s perfect for smooth cinematic footage on the go.",
+    "specs": [
+        "4K Video Recording at 30fps",
+        "3-Axis Gimbal Stabilization for Smooth Footage",
+        "Compact and Portable Design",
+        "Real-Time Object Tracking and Face Detection",
+        "Built-in 2.0-inch Touchscreen for Easy Control",
+        "ActiveTrack and Time-Lapse Features",
+        "Long Battery Life for Extended Shooting Sessions",
+        "Multiple Mounting Options for Versatile Use"
+    ]
+},
+{
+    "id": 23,
+    "name": "Osmo Action 5 Pro Standard Combo",
+    "price": 98399,
+    "image": "images/Osmo Action 5 Pro Standard-bnw_11zon.webp",
+    "description": "The Osmo Action 5 Pro Standard Combo is designed for creators who demand exceptional performance in extreme environments. With 4K video, a front-facing screen, and advanced stabilization features, this camera is ideal for vlogs, action sports, and adventure shoots.",
+    "specs": [
+        "4K Video Recording at 60fps",
+        "Dual Screens for Vlogging and Selfie Shots",
+        "3-Axis Gimbal Stabilization for Smooth Footage",
+        "Waterproof up to 10 meters",
+        "Real-Time Object Tracking and Face Detection",
+        "Wide Field of View for Immersive Footage",
+        "Built-in 8x Slow Motion Feature",
+        "Long Battery Life for Extended Use"
+    ]
+},
+{
+    "id": 24,
+    "name": "Sony Alpha a9 Mirrorless Digital Camera",
+    "price": 53399,
+    "image": "images/Sony Alpha a9 Mirrorless Digital Camera (Body Only)1.jpg",
+    "description": "The Sony Alpha a9 Mirrorless Digital Camera is designed for professional photographers seeking ultra-fast performance. With its 24.2MP Full-Frame Exmor RS CMOS Sensor, advanced autofocus, and up to 20fps continuous shooting, it’s the ideal camera for sports, wildlife, and action photography.",
+    "specs": [
+        "24.2MP Full-Frame Exmor RS CMOS Sensor",
+        "Up to 20fps Continuous Shooting",
+        "Advanced 693-Point Phase Detection AF System",
+        "4K Video Recording with Full Pixel Readout",
+        "5-Axis In-Body Image Stabilization",
+        "Dual SD Card Slots for Backup",
+        "Real-Time Eye AF for Humans and Animals",
+        "Built-in Wi-Fi and Bluetooth Connectivity"
+    ]
+}
+
+
+
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    function getProductIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return parseInt(urlParams.get('id'));
+    }
+
+    function loadProductDetails() {
+        const productId = getProductIdFromUrl();
+        const product = products.find(p => p.id === productId);
+
+        if (product) {
+            document.getElementById('product-name').textContent = product.name;
+            document.getElementById('product-description').textContent = product.description;
+            document.getElementById('product-price').textContent = `₨ ${product.price.toLocaleString()}`;
+            document.getElementById('product-image').src = product.image;
+
+            const specsList = document.getElementById('product-specs');
+            product.specs.forEach(spec => {
+                const li = document.createElement('li');
+                li.textContent = spec;
+                specsList.appendChild(li);
+            });
+        } else {
+            alert("Product not found!");
+        }
+    }
+
+    window.onload = loadProductDetails;
+
+
+
+let compareList = [];
+
+function addToCompare(id, name, price, image) {
+    console.log('addToCompare called'); // Debugging line
+    // Check if the product is already in the comparison list
+    if (compareList.find(product => product.id === id)) {
+        alert("This product is already in your comparison list.");
+        return;
+    }
+
+    // Add the product to the comparison list
+    compareList.push({ id, name, price, image });
+    console.log('Product added to comparison list:', compareList); // Debugging line
+
+    // Show the comparison section if two or more products are added
+    if (compareList.length > 1) {
+        showCompareSection();
+    }
+}
+
+function showCompareSection() {
+    console.log('showCompareSection called'); // Debugging line
+
+    const compareSection = document.getElementById("compareSection");
+    const compareContainer = document.getElementById("compareContainer");
+
+    compareContainer.innerHTML = ""; // Clear the container before adding new items
+
+    // Loop through the compare list and display products side by side
+    compareList.forEach(product => {
+        const productElement = document.createElement("div");
+        productElement.classList.add("col-md-4", "compare-item");
+        productElement.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h4>${product.name}</h4>
+            <p>$${product.price}</p>
+        `;
+        compareContainer.appendChild(productElement);
+    });
+
+    // Ensure the comparison section is shown
+    compareSection.style.display = "block"; // Show the comparison section
+    console.log('Compare section displayed'); // Debugging line
+}
+
+function clearComparison() {
+    compareList = [];
+    const compareContainer = document.getElementById("compareContainer");
+    compareContainer.innerHTML = ""; // Clear the comparison display
+    const compareSection = document.getElementById("compareSection");
+    compareSection.style.display = "none"; // Hide the comparison section
+    console.log('Comparison cleared'); // Debugging line
+}
+
+
+
+</script>
+
+
+
+</body>
+</html>
