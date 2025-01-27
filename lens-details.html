@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Fotolab Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="product.html">Cameras</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lenses</a></li>
+                                <li><a class="dropdown-item" href="product.html">Accessories</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lighting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container product-header">
+        <div class="row">
+            <div class="col-md-6">
+                <img id="product-image" class="product-image" src="" alt="Product Image">
+            </div>
+            <div class="col-md-6">
+                <h2 id="product-name" class="product-title"></h2>
+                <p id="product-price" class="product-price"></p>
+                <p id="product-description" class="product-description"></p>
+                <div class="product-specs">
+                    <h4>Specifications:</h4>
+                    <ul id="product-specs">
+                        <!-- Dynamic list of product specs will go here -->
+                    </ul>
+                </div>
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="compare-btn" onclick="addToCompare('product1', 'Product Name 1', 100, 'images/product1.jpg')">Compare</button>
+
+            </div>
+        </div>
+    </div>
+    
+    <div id="compareSection" class="container mt-5" style="display: none;">
+        <h4>Compare Products:</h4>
+        <div class="row" id="compareContainer">
+            <!-- Products will be displayed here -->
+        </div>
+        <button onclick="clearComparison()">Clear Comparison</button>
+    </div>
+    
+    
+    <div class="reviews mt-5">
+        <h4>Customer Reviews:</h4>
+        
+        <div class="review-item">
+            <div class="review-header">
+                <strong>John Doe</strong> 
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Exceptional lens! The sharpness and clarity are top-notch, and the bokeh is creamy and smooth. Perfect for portraits."</p>
+            <span class="review-date">Posted on: Jan 15, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Jane Smith</strong>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Great performance for the price. It's lightweight and delivers excellent image quality, but I wish the build felt sturdier."</p>
+            <span class="review-date">Posted on: Jan 18, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Mike Lee</strong>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Absolutely love this lens! It's sharp at all apertures, and the autofocus is fast and accurate. Highly recommended for professionals."</p>
+            <span class="review-date">Posted on: Jan 20, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Emily Brown</strong>
+                <span class="review-rating">⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Produces stunning images, but it's slightly heavy for extended use. The image stabilization works like a charm, though!"</p>
+            <span class="review-date">Posted on: Jan 22, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Chris Johnson</strong>
+                <span class="review-rating">⭐⭐⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"The lens quality is superb! Works perfectly for low-light conditions and delivers amazing background separation. Worth every penny!"</p>
+            <span class="review-date">Posted on: Jan 24, 2025</span>
+        </div>
+    
+        <div class="review-item">
+            <div class="review-header">
+                <strong>Alice Williams</strong>
+                <span class="review-rating">⭐⭐⭐</span>
+            </div>
+            <p class="review-text">"Good lens for beginners, but it took me some time to get used to manual focusing. Once mastered, the results are amazing."</p>
+            <span class="review-date">Posted on: Jan 26, 2025</span>
+        </div>
+    </div>
+    
+
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#introText">About Us</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: support@fotolab.com</p>
+                <p>Phone: +1 (123) 456-7890</p>
+                
+                    <div class="footer-content">
+                    
+                        <div class="location">
+                            <p><strong>Location:</strong></p>
+                            <p>123 Your Street, City Name, Country</p>
+                            <a href="https://www.google.com/maps?q=123+Your+Street,+City+Name,+Country" target="_blank">
+                                View on Google Maps
+                            </a>
+                        </div>
+                    </div>
+                
+                
+            </div>
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="#">Facebook</a><br>
+                <a href="#">Twitter</a><br>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <p class="text-center mt-3">&copy; 2025 Fotolab. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const products = 
+    [
+    {
+        "id": 1,
+        "name": "Nikon AF-S Nikkor 50mm f/1.8G Lens",
+        "price": 50000,
+        "image": "images/Nikon AF-S Nikkor.jpg",
+        "description": "A lightweight and compact prime lens, perfect for portraits and low-light photography.",
+        "specs": {
+            "focal_length": "50mm",
+            "aperture": "f/1.8",
+            "mount": "Nikon F",
+            "weight": "185g",
+            "focus": "Auto/Manual"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Canon EF 24-70mm f/2.8L II USM Lens",
+        "price": 155000,
+        "image": "images/Canon EF 24.jpg",
+        "description": "A versatile and professional-grade zoom lens with a constant f/2.8 aperture, ideal for various photography needs.",
+        "specs": {
+            "focal_length": "24-70mm",
+            "aperture": "f/2.8",
+            "mount": "Canon EF",
+            "weight": "805g",
+            "focus": "Auto/Manual",
+            "weather_sealed": true
+        }
+    },
+    
+    {
+        "id": 3,
+        "name": "Sigma 18-50mm f/2.8 DC DN Lens",
+        "price": 75000,
+        "image": "images/sigma_18_50mm_f_2_8_dg_dn_1667228-600x600.jpg",
+        "description": "A compact and lightweight zoom lens designed for APS-C mirrorless cameras, offering versatile focal lengths and excellent performance.",
+        "specs": {
+            "focal_length": "18-50mm",
+            "aperture": "f/2.8",
+            "mount": "Various (Sony E, L-Mount)",
+            "weight": "290g",
+            "focus": "Auto/Manual"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Tamron SP 70-200mm f/2.8 Di VC USD G2",
+        "price": 145000,
+        "image": "images/Tamron SP 70.jpg",
+        "description": "A high-performance telephoto zoom lens with vibration compensation and excellent image quality, perfect for sports and wildlife photography.",
+        "specs": {
+            "focal_length": "70-200mm",
+            "aperture": "f/2.8",
+            "mount": "Various (Canon EF, Nikon F)",
+            "weight": "1485g",
+            "focus": "Auto/Manual",
+            "image_stabilization": true
+        }
+    },
+    {
+        "id": 5,
+        "name": "Sony FE 85mm f/1.4 GM Lens",
+        "price": 200000,
+        "image": "images/sony FE.jpg",
+        "description": "A premium portrait lens offering stunning sharpness, creamy bokeh, and professional-grade performance for Sony full-frame cameras.",
+        "specs": {
+            "focal_length": "85mm",
+            "aperture": "f/1.4",
+            "mount": "Sony FE",
+            "weight": "820g",
+            "focus": "Auto/Manual",
+            "bokeh_quality": "Exceptional"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
+        "price": 95000,
+        "image": "images/FUJIFILM xf lense.webp",
+        "description": "A versatile zoom lens for Fujifilm X-series cameras, offering optical image stabilization and a lightweight design for everyday photography.",
+        "specs": {
+            "focal_length": "18-55mm",
+            "aperture": "f/2.8-4",
+            "mount": "Fujifilm X",
+            "weight": "310g",
+            "focus": "Auto/Manual",
+            "image_stabilization": true
+        }
+    },
+    
+    {
+        "id": 7,
+        "name": "Canon RF 70-200mm f/2.8L IS USM Lens",
+        "price": 215000,
+        "image": "images/canon rf lense.jpg",
+        "description": "A compact and lightweight telephoto zoom lens with advanced image stabilization, designed for Canon RF-mount cameras.",
+        "specs": {
+            "focal_length": "70-200mm",
+            "aperture": "f/2.8",
+            "mount": "Canon RF",
+            "weight": "1070g",
+            "focus": "Auto/Manual",
+            "image_stabilization": true
+        }
+    },
+    {
+        "id": 8,
+        "name": "Nikon Z 14-30mm f/4 S Lens",
+        "price": 120000,
+        "image": "images/nikon z14.webp",
+        "description": "An ultra-wide-angle lens with superior optical performance, compact design, and weather sealing for Nikon Z-series cameras.",
+        "specs": {
+            "focal_length": "14-30mm",
+            "aperture": "f/4",
+            "mount": "Nikon Z",
+            "weight": "485g",
+            "focus": "Auto/Manual",
+            "weather_sealed": true
+        }
+    },
+    {
+        "id": 9,
+        "name": "Sigma 35mm f/1.4 DG HSM Art Lens",
+        "price": 85000,
+        "image": "images/sigma 35mm lense.webp",
+        "description": "A high-quality prime lens with a fast f/1.4 aperture, ideal for artistic photography with outstanding sharpness and bokeh.",
+        "specs": {
+            "focal_length": "35mm",
+            "aperture": "f/1.4",
+            "mount": "Various (Canon EF, Nikon F, Sony E)",
+            "weight": "665g",
+            "focus": "Auto/Manual",
+            "bokeh_quality": "Excellent"
+        }
+    },
+    {
+        "id": 10,
+        "name": "Tamron 28-75mm f/2.8 Di III RXD Lens",
+        "price": 95000,
+        "image": "images/Tamron-28-75mm-F28-Di-III-RXD-for-Sony-E-Mount.jpg",
+        "description": "A versatile standard zoom lens with a fast f/2.8 aperture, optimized for Sony E-mount cameras, ideal for travel and everyday use.",
+        "specs": {
+            "focal_length": "28-75mm",
+            "aperture": "f/2.8",
+            "mount": "Sony E",
+            "weight": "550g",
+            "focus": "Auto/Manual",
+            "compact_design": true
+        }
+    },
+    
+    {
+        "id": 11,
+        "name": "Sony 16-35mm f/2.8 GM Lens",
+        "price": 220000,
+        "image": "images/sony 16-35mm.webp",
+        "description": "A wide-angle zoom lens with exceptional sharpness and fast f/2.8 aperture, perfect for landscapes, architecture, and video production.",
+        "specs": {
+            "focal_length": "16-35mm",
+            "aperture": "f/2.8",
+            "mount": "Sony FE",
+            "weight": "680g",
+            "focus": "Auto/Manual",
+            "weather_sealed": true
+        }
+    },
+    {
+        "id": 12,
+        "name": "Fujifilm XF 56mm f/1.2 R Lens",
+        "price": 135000,
+        "image": "images/FUJINON LENS XF56mmF1.2 R BNW Pakistan1_11zon.webp",
+        "description": "A fast prime lens for Fujifilm X-series cameras, offering stunning portrait performance with creamy bokeh and sharp details.",
+        "specs": {
+            "focal_length": "56mm",
+            "aperture": "f/1.2",
+            "mount": "Fujifilm X",
+            "weight": "405g",
+            "focus": "Auto/Manual",
+            "bokeh_quality": "Outstanding"
+        }
+    },
+    {
+        "id": 13,
+        "name": "Canon EF 50mm f/1.8 STM Lens",
+        "price": 25000,
+        "image": "images/CANON EF 50mm.jpg",
+        "description": "A lightweight and affordable prime lens with a fast f/1.8 aperture, ideal for portraits and low-light photography.",
+        "specs": {
+            "focal_length": "50mm",
+            "aperture": "f/1.8",
+            "mount": "Canon EF",
+            "weight": "160g",
+            "focus": "STM Autofocus",
+            "compact_design": true
+        }
+    },
+    {
+        "id": 14,
+        "name": "Nikon AF-S 70-200mm f/2.8E FL ED VR Lens",
+        "price": 240000,
+        "image": "images/AF-S NIKKOR.jpg",
+        "description": "A professional telephoto zoom lens with advanced vibration reduction and exceptional optical performance for Nikon DSLRs.",
+        "specs": {
+            "focal_length": "70-200mm",
+            "aperture": "f/2.8",
+            "mount": "Nikon F",
+            "weight": "1430g",
+            "focus": "Auto/Manual",
+            "image_stabilization": true
+        }
+    },
+    {
+        "id": 15,
+        "name": "Sigma 14-24mm f/2.8 DG HSM Art Lens",
+        "price": 130000,
+        "image": "images/SIGMA ART LENS.jpg",
+        "description": "An ultra-wide-angle zoom lens with superb sharpness and a fast f/2.8 aperture, perfect for astrophotography and landscapes.",
+        "specs": {
+            "focal_length": "14-24mm",
+            "aperture": "f/2.8",
+            "mount": "Various (Canon EF, Nikon F, Sony E)",
+            "weight": "1150g",
+            "focus": "Auto/Manual",
+            "weather_sealed": true
+        }
+    },
+    {
+        "id": 16,
+        "name": "Tamron 90mm f/2.8 Di VC USD Macro Lens",
+        "price": 60000,
+        "image": "images/tamron_sp_90mm_f_2_8_di_1456134620_1233541.webp",
+        "description": "A dedicated macro lens with vibration compensation, offering 1:1 magnification and sharp details for close-up photography.",
+        "specs": {
+            "focal_length": "90mm",
+            "aperture": "f/2.8",
+            "mount": "Various (Canon EF, Nikon F, Sony A)",
+            "weight": "610g",
+            "focus": "Auto/Manual",
+            "magnification": "1:1"
+        }
+    },
+    
+    {
+        "id": 17,
+        "name": "Sony 50mm f/1.2 GM Lens",
+        "price": 180000,
+        "image": "images/Sony-50mm-F1.2-GM-Lens-W3-Shopping-1696861169119.webp",
+        "description": "A premium standard prime lens with an ultra-fast f/1.2 aperture, delivering stunning sharpness, bokeh, and low-light performance for Sony E-mount cameras.",
+        "specs": {
+            "focal_length": "50mm",
+            "aperture": "f/1.2",
+            "mount": "Sony FE",
+            "weight": "778g",
+            "focus": "Auto/Manual",
+            "weather_sealed": true
+        }
+    },
+    {
+        "id": 18,
+        "name": "Fujifilm XF 10-24mm f/4 R OIS WR Lens",
+        "price": 105000,
+        "image": "images/Fujifilm XF 10-24mm.jpg",
+        "description": "A versatile ultra-wide-angle zoom lens with optical image stabilization and weather resistance, ideal for landscapes and interiors on Fujifilm X-series cameras.",
+        "specs": {
+            "focal_length": "10-24mm",
+            "aperture": "f/4",
+            "mount": "Fujifilm X",
+            "weight": "410g",
+            "focus": "Auto/Manual",
+            "image_stabilization": true
+        }
+    },
+    {
+        "id": 19,
+        "name": "Yongnuo YN 100mm f/2 Lens for Canon EF",
+        "price": 23500,
+        "image": "images/YONGNUO YN 100MM.webp",
+        "description": "An affordable and lightweight medium-telephoto prime lens with a fast f/2 aperture, perfect for portraits and low-light photography for Canon EF-mount cameras.",
+        "specs": {
+            "focal_length": "100mm",
+            "aperture": "f/2",
+            "mount": "Canon EF",
+            "weight": "440g",
+            "focus": "Auto/Manual",
+            "compact_design": true
+        }
+    },
+    {
+        "id": 20,
+        "name": "Yongnuo YN 50mm f/1.8 II Lens for Canon EF",
+        "price": 9000,
+        "image": "images/1yongnuo-yn-50mm--.webp",
+        "description": "A budget-friendly 50mm prime lens with a bright f/1.8 aperture, offering excellent value for portrait and general photography with Canon EF cameras.",
+        "specs": {
+            "focal_length": "50mm",
+            "aperture": "f/1.8",
+            "mount": "Canon EF",
+            "weight": "200g",
+            "focus": "Auto/Manual",
+            "compact_design": true
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+    ];
+
+    function getProductIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return parseInt(urlParams.get('id'));
+}
+
+function loadProductDetails() {
+    const productId = getProductIdFromUrl();
+    const product = products.find(p => p.id === productId);
+
+    if (product) {
+        // Set product details
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-price').textContent = `₨ ${product.price.toLocaleString()}`;
+        document.getElementById('product-image').src = product.image;
+
+        // Populate specs
+        const specsList = document.getElementById('product-specs');
+        specsList.innerHTML = ''; // Clear any existing specs
+        for (const [key, value] of Object.entries(product.specs)) {
+            const li = document.createElement('li');
+            li.textContent = `${key.replace(/_/g, ' ')}: ${value}`;
+            specsList.appendChild(li);
+        }
+    } else {
+        alert("Product not found!");
+    }
+}
+
+window.onload = loadProductDetails;
+
+
+</script>

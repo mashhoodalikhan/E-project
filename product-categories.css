@@ -99,6 +99,7 @@ h1 {
 .card img {
     border-radius: 5px 5px 0 0;
     height: 200px;
+    width: fit-content;
     object-fit: cover;
 }
 

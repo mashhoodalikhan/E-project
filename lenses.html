@@ -127,7 +127,7 @@
     </footer>
 
     <script>
-        const lenses = [
+        const products = [
             {
                 "id": 1,
                 "name": "Nikon AF-S Nikkor 50mm f/1.8G Lens",
@@ -247,7 +247,10 @@
     "name": "Yongnuo YN 50mm f/1.8 II Lens for Canon EF",
     "price": 9000,
     "image": "images/1yongnuo-yn-50mm--.webp",
-}
+},
+
+
+
 
 
         ];
@@ -262,14 +265,26 @@
                 card.innerHTML = `
                     <img src="${product.image}" alt="${product.name}">
                     <h3>${product.name}</h3>
+               
                     <p class="price">₨ ${product.price.toLocaleString()}</p>
-                    <button class="add-to-cart-btn">Add to Cart</button>
-                `;
+           <button class="add-to-cart-btn" onclick="viewProduct(${product.id})">View Details</button>
+
+                 `;
+
+
                 container.appendChild(card);
             });
         };
 
-        generateProductCards(lenses);
+
+function viewProduct(productId) {
+    // Redirect to the product details page with the product id in the URL
+    window.location.href = `lens-details.html?id=${productId}`;
+}
+
+
+
+        generateProductCards(products);
 
         function searchProducts() {
             const query = document.getElementById('search-box').value.toLowerCase();
