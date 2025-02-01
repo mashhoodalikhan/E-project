@@ -1,0 +1,554 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1B1F3B;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 120px;
+}
+
+.navbar-brand img {
+    width: 150px;
+}
+
+.navbar-dark .nav-link {
+    color: #fff;
+}
+
+.navbar-dark .nav-link:hover {
+    color: #FFD700;
+}
+
+.dropdown-menu a {
+    color: black;
+}
+
+.navbar-nav .dropdown-menu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+
+.navbar-nav .dropdown:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.custom-carousel {
+    max-width: 70%;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.custom-carousel .carousel-inner img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.carousel-caption p {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.carousel-item.active .carousel-caption p {
+    animation-delay: 0.5s;
+}
+
+#introText {
+    background: #f9f9f9;
+    color: #333;
+    padding: 2rem 0;
+}
+
+
+#featured-products .row {
+    display: flex;
+    justify-content: center; 
+    align-items: stretch; /* Ensure all cards have the same height */
+    gap: 5px; /* Space between cards */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    overflow-x: auto; /* Allows scrolling if there are too many cards */
+    padding-bottom: 10px; 
+}
+
+#featured-products .card {
+    flex: 1 1 300px; /* Ensures all cards take equal space */
+    max-width: 300px; /* Fixes card width */
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#featured-products .card:hover {
+    transform: scale(1.05);
+    /* transform: translateY(-10px); */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+#featured-products .card img {
+    width: 90%;
+    margin: 0px 20px;
+    height: 200px;
+    object-fit:auto;
+    transition: transform 0.3s ease;
+}
+
+#featured-products .card img:hover {
+    transform: scale(1.05);
+}
+
+#featured-products .card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+#featured-products .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#featured-products .card-text {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+#featured-products .card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1B1F3B;
+    margin-bottom: 10px;
+}
+
+#featured-products .card-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #1B1F3B;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#featured-products .card-btn:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #featured-products .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #featured-products .card {
+        width: 90%; /* Adjust the card width to take up more space on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #featured-products h2 {
+        font-size: 28px;
+    }
+    
+    #featured-products .card-title {
+        font-size: 18px;
+    }
+
+    #featured-products .card-price {
+        font-size: 16px;
+    }
+}
+
+.btn-primary {
+    background-color: #1B1F3B;  /* Default color */
+    border: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #FFD700;  /* Gold color on hover */
+    color: #1B1F3B; /* Dark blue text on hover */
+    border: none;
+}
+.btn-secondary {
+    background-color: #1B1F3B;
+    border: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+    border: none;
+}
+
+
+footer {
+    background: #1B1F3B;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer h5 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #FFD700;
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    background-color: #25d366;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.whatsapp-float:hover {
+    background-color: #1da851;
+}
+
+.whatsapp-icon {
+    width: 30px;
+    height: 30px;
+}
+
+/* ✅ Responsive WhatsApp Button */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        right: 10px;
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
+
+.sale-cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.sale-card {
+    width: 30%;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.sale-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .sale-card {
+        width: 48%;
+    }
+}
+
+@media (max-width: 480px) {
+    .sale-card {
+        width: 100%;
+    }
+}
+
+.sale-card-img {
+    width: fit-content;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.sale-card-img:hover {
+    transform: scale(1.05);
+}
+
+.sale-card-title-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sale-card:hover .sale-card-title-overlay {
+    opacity: 1;
+}
+
+.sale-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 0 15px;
+}
+
+.limited-offer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-size: 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.sale-card:hover .limited-offer {
+    opacity: 1;
+}
+
+.sale-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.sale-card-description {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+.sale-card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 10px;
+    text-decoration: line-through;
+}
+
+.sale-card-discount {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
+    margin-left: 5px;
+}
+
+.sale-card-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #1B1F3B;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.sale-card-btn:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 60%;
+    text-align: center;
+    border: 3px solid #FFD700;
+}
+
+.close-btn {
+    font-size: 40px;
+    font-weight: bold;
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#modal-description {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+#modal-price,
+#modal-discount {
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: relative;
+   
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+}
+@media (max-width: 768px) {
+    .hero-overlay {
+        padding: 10px;
+    }
+}
+
+
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 28px;
+    background-color: #1B1F3B;
+    color: white;
+    font-size: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s
+}
+
+.cta-button:hover {
+    background-color: #FFD700;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .cta-button {
+        font-size: 18px;
+        padding: 12px 24px;
+    }
+}
+@media (max-width: 768px) {
+    .sale-card-img {
+        height: 200px;
+    }
+}
+@media (max-width: 480px) {
+    .sale-card-content {
+        padding: 15px;
+    }
+}

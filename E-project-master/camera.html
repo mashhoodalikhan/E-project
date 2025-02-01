@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List</title>
+    <link rel="stylesheet" href="camera.css">
+    <link rel="stylesheet" href="index.html">
+    <!-- Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="Fotolab Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="product.html">Cameras</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lenses</a></li>
+                                <li><a class="dropdown-item" href="product.html">Accessories</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lighting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-3 sidebar">
+                <h2>Brands</h2>
+                <ul class="brand-list">
+                    <li><a href="#" onclick="filterByBrand('Nikon')">Nikon</a></li>
+                    <li><a href="#" onclick="filterByBrand('Canon')">Canon</a></li>
+                    <li><a href="#" onclick="filterByBrand('Blackmagic Design')">Blackmagic Design</a></li>
+                    <li><a href="#" onclick="filterByBrand('Panasonic')">Panasonic</a></li>
+                    <li><a href="#" onclick="filterByBrand('GoPro')">GoPro</a></li>
+                    <li><a href="#"onclick="filterByBrand('Sony')">Sony</a></li>
+                    <li><a href="#"onclick="filterByBrand('DJI')">DJI</a></li>
+                </ul>
+            </aside>
+    
+            <!-- Main Content -->
+            <main class="col-9 main-content">
+                <div class="search-bar">
+                    <input id="search-box" type="text" placeholder="Search products..." oninput="searchProducts()">
+                </div>
+                <div class="filter-bar">
+                    <select id="price-filter" onchange="filterByPrice()">
+                        <option value="">Filter by Price</option>
+                        <option value="low">Below ₨ 100,000</option>
+                        <option value="medium">₨ 100,000 - ₨ 200,000</option>
+                        <option value="high">Above ₨ 200,000</option>
+                    </select>
+                </div>
+                <div id="product-container" class="product-container"></div>
+            </main>
+        </div>
+    </div>
+    
+    
+
+    <!-- Product Section -->
+    <main>
+        <div id="product-container" class="product-container"></div>
+      
+    </main>
+ 
+    <a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20products." 
+    target="_blank" 
+    class="whatsapp-float">
+     <img src="images/icons8-whatsapp.gif" alt="WhatsApp" class="whatsapp-icon">
+ </a>
+ 
+    
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#introText">About Us</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@fotolab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    
+                        <div class="footer-content">
+                        
+                            <div class="location">
+                                <p><strong>Location:</strong></p>
+                                <p>123 Your Street, City Name, Country</p>
+                                <a href="https://www.google.com/maps?q=123+Your+Street,+City+Name,+Country" target="_blank">
+                                    View on Google Maps
+                                </a>
+                            </div>
+                        </div>
+                    
+                    
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="#">Twitter</a><br>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <p class="text-center mt-3">&copy; 2025 Fotolab. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+   
+
+    <script>
+        const products = [
+            {
+                "id": 1,
+                "name": "Nikon D3500 with 18-55mm Lens Kit",
+                "price": 150000,
+                "image": "images/Nikon+D3500+with+18-55mm+Lens+Kit+Price+in+Pakistan,+Specifications,+Features_-_25628.jpg",
+                
+            },
+            {
+                "id": 2,
+                "name": "Nikon D850 Body",
+                "price": 160000,
+                "image": "images/Nikon+D850+Body+Price+in+Pakistan,+Specifications,+Features_-_25625.jpg",
+                
+            },
+            {
+                "id": 3,
+                "name": "Canon Eos 200D Mark II 18-55mm DSLR Camera",
+                "price": 179999,
+                "image": "images/Canon+Eos+200D+Mark+II+18-55mm+DSLR+Camera+Price+in+Pakistan,+Specifications,+Features_-_22721.jpg",
+                
+            },
+            {
+                "id": 4,
+                "name": "Blackmagic Design Cinema Camera with PL Mount",
+                "price": 296399,
+                "image":"images/Blackmagic+Design+Cinema+Camera+with+PL+Mount+Price+in+Pakistan,+Specifications,+Features_-_25624.webp",
+            },
+            {
+                "id": 5,
+                "name": "CANON EOS 3000D DSLR CAMERA WITH EF-S 18-55MM III LENS ",
+                "price": 86000,
+                "image":"images/CANON-EOS-3000D-DSLR-CAMERA-WITH-EF-S-18-55MM-III-LENS.png",
+                
+            },
+            {
+                "id": 6,
+                "name": "Nikon D5600 18-55mm Kit",
+                "price": 179999,
+                "image":"images/Nikon+D5600+18-55mm+Kit+Price+in+Pakistan,+Specifications,+Features_-_16183.webp",
+               
+            },
+            {
+                "id": 7,
+                "name": "Canon 250D with 18-55mm STM Lens Kit",
+                "price": 249999,
+                "image":"images/Canon-250D-DSLR-Camera-optimized.webp",
+              
+            },
+            {
+                "id": 8,
+                "name": "Panasonic Lumix DMC-G7 Mirrorless Micro Four Thirds Digital Camera",
+                "price": 155000,
+                "image":"images/Panasonic+Lumix+DMC-G7+Mirrorless+Micro+Four+Thirds+Digital+Camera+with+14-42mm+Lens+Black+Price+in+Pakistan,+Specifications,+Features_-_25718.webp",
+           
+            },
+            {
+                "id": 9,
+                "name": "GoPro Hero 13 Action Camera Creator Edition",
+                "price": 209999,
+                "image":"images/GoPro+Hero+13+Action+Camera+Creator+Edition+Price+in+Pakistan,+Specifications,+Features_-_25575.webp",
+               
+            },
+            {
+                "id": 10,
+                "name": "Sony a7 IV Mirrorless Digital Camera (Body Only)",
+                "price": 570000,
+                "image":"images/sony_ilce_7m4_b_alpha_a7_iv_mirrorless_1634812545_1667800.jpg",
+                "description":"An all-arounder that pushes beyond basic, the Sony a7 IV does double duty with strong stills and video performance. An advanced hybrid mirrorless camera, the a7 IV has the resolution and AF performance that appeals to photographers along with robust 4K 60p video recording for filmmakers and content creators."  
+             },
+             {
+                "id": 11,
+                "name":"Sony Alpha a6500 Mirrorless Digital Camera With 18-135mm Lens",
+                "price": 215000,
+                "image":"images/Sony-Alpha-A6500-Mirrorless-Digital-Camera-With-18-135mm-Lens.jpg",
+             },
+            {
+                "id": 12,
+                "name":"GoPro Hero 7 Black",
+                "price": 55000,
+                "image":"images/gopro hero 7.jpg",
+         
+            },
+            {
+                "id": 13,
+                "name":"Blackmagic Design URSA Mini 4K Digital Cinema Camera (PL-Mount)",
+                "price": 379000,
+                "image":"images/Blackmagic Design URSA Mini 4K Digital Cinema Camera PL-Mount1.jpg",
+         
+            },
+            {
+                "id": 14,
+                "name":"Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)",
+                "price": 540000,
+                "image":"images/Blackmagic Design URSA 4K v1 Digital Cinema Camera (EF Mount)6.jpg",
+         
+            },
+            {
+                "id": 15,
+                "name":"Blackmagic 6K Pro Pocket Cinema Camera (Canon EF)",
+                "price": 46000,
+                "image":"images/pcfnblackmagic-pocket-cinema-camera 6k-pro-3-800x800-0-_112_11zon.webp",
+         
+            },
+            {
+                "id": 16,
+                "name":"Blackmagic Design Studio Camera HD",
+                "price": 185000,
+                "image":"images/Blackmagic Design Studio Camera HD1.jpg"
+            },
+            {
+                "id": 17,
+                "name":"Panasonic V260 Full HD Camcorder",
+                "price": 19200,
+                "image":"images/1672834787panasonic-v260-full-hd-camcorder-pakistan-img1-800x800-0-_11zon.webp"
+            },
+            {
+                "id": 18,
+                "name":"Panasonic HC-MDH2 AVCHD Shoulder Mount Camcorder",
+                "price": 87000,
+                "image":"images/Panasonic HC-MDH2 AVCHD Shoulder Mount Camera.jpg"
+            },
+            {
+                "id": 19,
+                "name":"GoPro Hero 4k Compact Action Camera",
+                "price": 64999,
+                "image":"images/gopro hero 4K Compact Action Camera.webp"
+            },
+            {
+                "id": 20,
+                "name":"DJI Osmo Pocket 3 Creator Combo",
+                "price": 16999,
+                "image":"images/DJI Osmo Pocket 3 creator combo.webp"
+            },
+            {
+                "id": 21,
+                "name":"DJI Osmo Pocket Gimbal",
+                "price": 58000,
+                "image":"images/1673327246DJI Osmo Pocket Gimbal1.jpg"
+            },
+            {
+                "id": 22,
+                "name":"DJI Osmo Pro Combo",
+                "price": 28000,
+                "image":"images/Osmo Pro Combo1.jpg"
+            },
+            {
+                "id": 23,
+                "name":"Osmo Action 5 Pro Standard Combo",
+                "price": 98399,
+                "image":"images/Osmo Action 5 Pro Standard-bnw_11zon.webp"
+            },
+            {
+                "id": 24,
+                "name":"Sony Alpha a9 Mirrorless Digital Camera",
+                "price": 53399,
+                "image":"images/Sony Alpha a9 Mirrorless Digital Camera (Body Only)1.jpg"
+            },
+
+     
+        
+     
+        ];
+
+        const container = document.getElementById('product-container');
+
+        function generateProductCards(products) {
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+               
+                    <p class="price">₨ ${product.price.toLocaleString()}</p>
+           <button class="add-to-cart-btn" onclick="viewProduct(${product.id})">View Details</button>
+                    <a href="Details.docx" download="Details.docx">
+    <button class="btn btn-light download-btn">
+        <i class="fa-solid fa-download"></i>
+    </button>
+</a>
+
+                 `;
+
+
+                container.appendChild(card);
+            });
+        };
+
+
+function viewProduct(productId) {
+    // Redirect to the product details page with the product id in the URL
+    window.location.href = `product-details.html?id=${productId}`;
+}
+
+
+
+        generateProductCards(products);
+
+        function searchProducts() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = name.includes(query) ? '' : 'none';
+            });
+        };
+
+        function filterByPrice() {
+            const filter = document.getElementById('price-filter').value;
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const price = parseInt(card.querySelector('.price').textContent.replace(/[₨,]/g, ''));
+                
+                if (
+                    (filter === 'low' && price < 100000) ||
+                    (filter === 'medium' && price >= 100000 && price <= 200000) ||
+                    (filter === 'high' && price > 200000)
+                ) {
+                    card.style.display = ''; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        }
+
+        function filterByBrand(brand) {
+    const cards = document.querySelectorAll('.product-card');
+
+    cards.forEach(card => {
+        const name = card.querySelector('h3').textContent;
+        card.style.display = name.includes(brand) ? '' : 'none';
+    });
+}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenses List</title>
+    <link rel="stylesheet" href="camera.css">
+    <link rel="stylesheet" href="index.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" alt="Fotolab Logo" class="logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                       <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Products
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="product.html">Cameras</a></li>
+                                <li><a class="dropdown-item" href="lenses.html">Lenses</a></li>
+                                <li><a class="dropdown-item" href="product.html">Accessories</a></li>
+                                <li><a class="dropdown-item" href="product.html">Lighting</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">About Us</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <aside class="col-3 sidebar">
+                <h2>Brands</h2>
+                <ul class="brand-list">
+                    <li><a href="#" onclick="filterByBrand('Nikon')">Nikon</a></li>
+                    <li><a href="#" onclick="filterByBrand('Canon')">Canon</a></li>
+                    <li><a href="#" onclick="filterByBrand('Sony')">Sony</a></li>
+                    <li><a href="#" onclick="filterByBrand('Sigma')">Sigma</a></li>
+                    <li><a href="#" onclick="filterByBrand('Tamron')">Tamron</a></li>
+                    <li><a href="#" onclick="filterByBrand('Fujifilm')">Fujifilm</a></li>
+                    <li><a href="#" onclick="filterByBrand('Yongnuo')">Yongnuo</a></li>
+                </ul>
+            </aside>
+    
+            <!-- Main Content -->
+            <main class="col-9 main-content">
+                <div class="search-bar">
+                    <input id="search-box" type="text" placeholder="Search lenses..." oninput="searchProducts()">
+                </div>
+                <div class="filter-bar">
+                    <select id="price-filter" onchange="filterByPrice()">
+                        <option value="">Filter by Price</option>
+                        <option value="low">Below ₨ 50,000</option>
+                        <option value="medium">₨ 50,000 - ₨ 150,000</option>
+                        <option value="high">Above ₨ 150,000</option>
+                    </select>
+                </div>
+                <div id="product-container" class="product-container">
+            
+                </div>
+            </main>
+        </div>
+    </div>
+    
+    <!-- Product Section -->
+    <main>
+        <div id="product-container" class="product-container"></div>
+    </main>
+ 
+    <a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20lenses." 
+    target="_blank" 
+    class="whatsapp-float">
+     <img src="images/icons8-whatsapp.gif" alt="WhatsApp" class="whatsapp-icon">
+ </a>
+ 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#introText">About Us</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p>Email: support@fotolab.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <div class="footer-content">
+                        <div class="location">
+                            <p><strong>Location:</strong></p>
+                            <p>123 Your Street, City Name, Country</p>
+                            <a href="https://www.google.com/maps?q=123+Your+Street,+City+Name,+Country" target="_blank">
+                                View on Google Maps
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <a href="#">Facebook</a><br>
+                    <a href="#">Twitter</a><br>
+                    <a href="#">Instagram</a>
+                </div>
+            </div>
+            <p class="text-center mt-3">&copy; 2025 Fotolab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            {
+                "id": 1,
+                "name": "Nikon AF-S Nikkor 50mm f/1.8G Lens",
+                "price": 50000,
+                "image": "images/Nikon AF-S Nikkor.jpg",
+            },
+            {
+                "id": 2,
+                "name": "Canon EF 24-70mm f/2.8L II USM Lens  ",
+                "price": 155000,
+                "image": "images/Canon EF 24.jpg",
+            },
+            {
+                "id": 3,
+                "name": "Sigma 18-50mm f/2.8 DC DN Lens",
+                "price": 75000,
+                "image": "images/sigma_18_50mm_f_2_8_dg_dn_1667228-600x600.jpg",
+            },
+            {
+                "id": 4,
+                "name": "Tamron SP 70-200mm f/2.8 Di VC USD G2",
+                "price": 145000,
+                "image":"images/Tamron SP 70.jpg",
+            },
+            {
+                "id": 5,
+                "name": "Sony FE 85mm f/1.4 GM Lens    ",
+                "price": 200000,
+                "image":"images/sony FE.jpg",
+            },
+            {
+                "id": 6,
+                "name": "Fujifilm XF 18-55mm f/2.8-4 R LM OIS",
+                "price": 95000,
+                "image":"images/FUJIFILM xf lense.webp",
+            },
+            {
+    "id": 7,
+    "name": "Canon RF 70-200mm f/2.8L IS USM Lens",
+    "price": 215000,
+    "image": "images/canon rf lense.jpg",
+},
+{
+    "id": 8,
+    "name": "Nikon Z 14-30mm f/4 S Lens",
+    "price": 120000,
+    "image": "images/nikon z14.webp",
+},
+{
+    "id": 9,
+    "name": "Sigma 35mm f/1.4 DG HSM Art Lens",
+    "price": 85000,
+    "image": "images/sigma 35mm lense.webp",
+},
+{
+    "id": 10,
+    "name": "Tamron 28-75mm f/2.8 Di III RXD Lens",
+    "price": 95000,
+    "image": "images/Tamron-28-75mm-F28-Di-III-RXD-for-Sony-E-Mount.jpg",
+},
+{
+    "id": 11,
+    "name": "Sony 16-35mm f/2.8 GM Lens",
+    "price": 220000,
+    "image": "images/sony 16-35mm.webp",
+},
+{
+    "id": 12,
+    "name": "Fujifilm XF 56mm f/1.2 R Lens",
+    "price": 135000,
+    "image": "images/FUJINON LENS XF56mmF1.2 R BNW Pakistan1_11zon.webp",
+},
+{
+    "id": 13,
+    "name": "Canon EF 50mm f/1.8 STM Lens",
+    "price": 25000,
+    "image": "images/CANON EF 50mm.jpg",
+},
+{
+    "id": 14,
+    "name": "Nikon AF-S 70-200mm f/2.8E FL ED VR Lens",
+    "price": 240000,
+    "image": "images/AF-S NIKKOR.jpg",
+},
+{
+    "id": 15,
+    "name": "Sigma 14-24mm f/2.8 DG HSM Art Lens",
+    "price": 130000,
+    "image": "images/SIGMA ART LENS.jpg",
+},
+{
+    "id": 16,
+    "name": "Tamron 90mm f/2.8 Di VC USD Macro Lens",
+    "price": 60000,
+    "image": "images/tamron_sp_90mm_f_2_8_di_1456134620_1233541.webp",
+},
+{
+    "id": 17,
+    "name": "Sony 50mm f/1.2 GM Lens",
+    "price": 180000,
+    "image": "images/Sony-50mm-F1.2-GM-Lens-W3-Shopping-1696861169119.webp",
+},
+{
+    "id": 18,
+    "name": "Fujifilm XF 10-24mm f/4 R OIS WR Lens",
+    "price": 105000,
+    "image": "images/Fujifilm XF 10-24mm.jpg",
+},
+{
+    "id": 19,
+    "name": "Yongnuo YN 100mm f/2 Lens for Canon EF",
+    "price": 23500,
+    "image": "images/YONGNUO YN 100MM.webp",
+},
+{
+    "id": 20,
+    "name": "Yongnuo YN 50mm f/1.8 II Lens for Canon EF",
+    "price": 9000,
+    "image": "images/1yongnuo-yn-50mm--.webp",
+},
+
+
+
+
+
+        ];
+
+        const container = document.getElementById('product-container');
+
+        function generateProductCards(products) {
+            products.forEach(product => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+
+                card.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+               
+                    <p class="price">₨ ${product.price.toLocaleString()}</p>
+           <button class="add-to-cart-btn" onclick="viewProduct(${product.id})">View Details</button>
+         <a href="Details.docx" download="Details.docx">
+    <button class="btn btn-light download-btn">
+        <i class="fa-solid fa-download"></i>
+    </button>
+</a>
+
+
+                 `;
+
+
+                container.appendChild(card);
+            });
+        };
+
+
+function viewProduct(productId) {
+    // Redirect to the product details page with the product id in the URL
+    window.location.href = `lens-details.html?id=${productId}`;
+}
+
+
+
+        generateProductCards(products);
+
+        function searchProducts() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = name.includes(query) ? '' : 'none';
+            });
+        };
+
+        function filterByPrice() {
+            const filter = document.getElementById('price-filter').value;
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const price = parseInt(card.querySelector('.price').textContent.replace(/[₨,]/g, ''));
+                
+                if (
+                    (filter === 'low' && price < 50000) ||
+                    (filter === 'medium' && price >= 50000 && price <= 150000) ||
+                    (filter === 'high' && price > 150000)
+                ) {
+                    card.style.display = ''; // Show the card
+                } else {
+                    card.style.display = 'none'; // Hide the card
+                }
+            });
+        }
+
+        function filterByBrand(brand) {
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent;
+                card.style.display = name.includes(brand) ? '' : 'none';
+            });
+        }
+
+    </script>
+
+</body>
+</html>
