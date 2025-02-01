@@ -73,7 +73,9 @@
                         <option value="high">Above ₨ 150,000</option>
                     </select>
                 </div>
-                <div id="product-container" class="product-container"></div>
+                <div id="product-container" class="product-container">
+            
+                </div>
             </main>
         </div>
     </div>
@@ -136,7 +138,7 @@
             },
             {
                 "id": 2,
-                "name": "Canon EF 24-70mm f/2.8L II USM Lens",
+                "name": "Canon EF 24-70mm f/2.8L II USM Lens  ",
                 "price": 155000,
                 "image": "images/Canon EF 24.jpg",
             },
@@ -154,7 +156,7 @@
             },
             {
                 "id": 5,
-                "name": "Sony FE 85mm f/1.4 GM Lens",
+                "name": "Sony FE 85mm f/1.4 GM Lens    ",
                 "price": 200000,
                 "image":"images/sony FE.jpg",
             },
@@ -268,6 +270,12 @@
                
                     <p class="price">₨ ${product.price.toLocaleString()}</p>
            <button class="add-to-cart-btn" onclick="viewProduct(${product.id})">View Details</button>
+         <a href="Details.docx" download="Details.docx">
+    <button class="btn btn-light download-btn">
+        <i class="fa-solid fa-download"></i>
+    </button>
+</a>
+
 
                  `;
 

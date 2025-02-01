@@ -12,6 +12,7 @@ header {
     background-color: #1B1F3B;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    height: 120px;
 }
 
 .navbar-brand img {
@@ -31,7 +32,8 @@ header {
 }
 
 .navbar-nav .dropdown-menu {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: 100%;
     left: 0;
@@ -41,8 +43,10 @@ header {
     z-index: 1000;
 }
 
+
 .navbar-nav .dropdown:hover .dropdown-menu {
-    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 .custom-carousel {
@@ -82,10 +86,136 @@ header {
     padding: 2rem 0;
 }
 
-#featured-products .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+
+#featured-products .row {
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: stretch; /* Ensure all cards have the same height */
+    gap: 20px; /* Space between cards */
+    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    overflow-x: auto; /* Allows scrolling if there are too many cards */
+    padding-bottom: 10px; /* Space for scrollbar */
 }
+
+#featured-products .card {
+    flex: 1 1 300px; /* Ensures all cards take equal space */
+    max-width: 300px; /* Fixes card width */
+    border: none;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#featured-products .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+#featured-products .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#featured-products .card img:hover {
+    transform: scale(1.05);
+}
+
+#featured-products .card-body {
+    padding: 20px;
+    text-align: left;
+}
+
+#featured-products .card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#featured-products .card-text {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+#featured-products .card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1B1F3B;
+    margin-bottom: 10px;
+}
+
+#featured-products .card-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #1B1F3B;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+#featured-products .card-btn:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #featured-products .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #featured-products .card {
+        width: 90%; /* Adjust the card width to take up more space on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #featured-products h2 {
+        font-size: 28px;
+    }
+    
+    #featured-products .card-title {
+        font-size: 18px;
+    }
+
+    #featured-products .card-price {
+        font-size: 16px;
+    }
+}
+
+.btn-primary {
+    background-color: #1B1F3B;  /* Default color */
+    border: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: #FFD700;  /* Gold color on hover */
+    color: #1B1F3B; /* Dark blue text on hover */
+    border: none;
+}
+.btn-secondary {
+    background-color: #1B1F3B;
+    border: none;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+    border: none;
+}
+
 
 footer {
     background: #1B1F3B;
@@ -110,7 +240,7 @@ footer a:hover {
 
 .whatsapp-float {
     position: fixed;
-    top: 200px;
+    bottom: 20px;
     right: 20px;
     z-index: 1000;
     background-color: #25d366;
@@ -132,6 +262,17 @@ footer a:hover {
     width: 30px;
     height: 30px;
 }
+
+/* ✅ Responsive WhatsApp Button */
+@media (max-width: 480px) {
+    .whatsapp-float {
+        right: 10px;
+        bottom: 10px;
+        width: 50px;
+        height: 50px;
+    }
+}
+
 
 .sale-cards-container {
     display: flex;
@@ -354,6 +495,12 @@ footer a:hover {
     border-radius: 10px;
     max-width: 600px;
 }
+@media (max-width: 768px) {
+    .hero-overlay {
+        padding: 10px;
+    }
+}
+
 
 .hero h1 {
     font-size: 40px;
@@ -373,7 +520,7 @@ footer a:hover {
     font-size: 20px;
     text-decoration: none;
     border-radius: 5px;
-    transition: background 0.3s;
+    transition: background 0.3s
 }
 
 .cta-button:hover {
@@ -391,5 +538,15 @@ footer a:hover {
     .cta-button {
         font-size: 18px;
         padding: 12px 24px;
+    }
+}
+@media (max-width: 768px) {
+    .sale-card-img {
+        height: 200px;
+    }
+}
+@media (max-width: 480px) {
+    .sale-card-content {
+        padding: 15px;
     }
 }
