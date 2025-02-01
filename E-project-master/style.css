@@ -92,7 +92,7 @@ header {
     justify-content: center; 
     align-items: stretch; /* Ensure all cards have the same height */
     gap: 5px; /* Space between cards */
-    flex-wrap: nowrap; /* Prevent wrapping to a new line */
+    flex-wrap: nowrap; /*Prevent wrapping to a new line *  /
     overflow-x: auto; /* Allows scrolling if there are too many cards */
     padding-bottom: 10px; 
 }
