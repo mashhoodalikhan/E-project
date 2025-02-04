@@ -51,7 +51,19 @@
  </a>
 
     <main>
-        <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-bs-ride="carousel">
+                <!-- Hero Section -->
+<section class="hero">
+    <video autoplay muted loop class="hero-video">
+        <source src="images/video.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay">
+        <h1>Capture Every Moment with Precision 📸</h1>
+        <p>Explore the latest cameras and accessories at unbeatable prices.</p>
+        <a href="product.html" class="cta-button">View Our Products</a>
+    </div>
+</section>
+
+        <!-- <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-bs-ride="carousel">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -88,7 +100,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-          </div>
+          </div> -->
           
           
 
@@ -151,18 +163,46 @@
             </div>
         </div>
 
-        <!-- Hero Section -->
-<section class="hero">
-    <video autoplay muted loop class="hero-video">
-        <source src="images/video.mp4" type="video/mp4">
-    </video>
-    <div class="hero-overlay">
-        <h1>Capture Every Moment with Precision 📸</h1>
-        <p>Explore the latest cameras and accessories at unbeatable prices.</p>
-        <a href="product.html" class="cta-button">View Our Products</a>
-    </div>
-</section>
 
+        <div id="carouselExampleCaptions" class="carousel slide custom-carousel" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="4000">
+                <img src="images/professional-camera-laptop.jpg" class="d-block w-100" alt="Latest Camera Collection">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Latest Camera Collection</h5>
+                  <p>Discover top-quality cameras from leading brands at unbeatable prices!</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="4000">
+                <img src="images/modern-camera-film-reel-film-strips-yellow-background.jpg" class="d-block w-100" alt="Essential Camera Accessories">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Essential Camera Accessories</h5>
+                  <p>Shop for the best camera lenses, tripods, memory cards, and more!</p>
+                </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="4000">
+                <img src="images/close-up-multiple-retro-photo-cameras.jpg" class="d-block w-100" alt="Featured Brands">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Featured Camera Brands</h5>
+                  <p>Explore cameras and accessories from Nikon, Canon, Sony, and more.</p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          
         
         
          
@@ -175,40 +215,40 @@
         <section id="featured-products" class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center mb-4">Featured Products</h2>
-                <div class="row">
+                <div class="row g-3"> <!-- Bootstrap gap class -->
                     
                     <!-- Product 1 -->
-                    <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="card h-100">
                             <img src="images/FUJIFILM Digital Camera X100F.png" class="card-img-top" alt="Camera 1" loading="lazy">
                             <div class="card-body text-center">
                                 <h5 class="card-title">FUJIFILM Digital Camera X100F</h5>
                                 <p class="card-text">₨ 224,500</p>
-                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-primary w-100">Add to Cart</button>
                             </div>
                         </div>
                     </div>
         
                     <!-- Product 2 -->
-                    <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="card h-100">
                             <img src="images/FUJIFILM XF 100 lens.jpg" class="card-img-top" alt="Lens 1" loading="lazy">
                             <div class="card-body text-center">
                                 <h5 class="card-title">FUJIFILM XF 100-400mm Lens</h5>
                                 <p class="card-text">₨ 313,500</p>
-                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-primary w-100">Add to Cart</button>
                             </div>
                         </div>
                     </div>
         
                     <!-- Product 3 -->
-                    <div class="col-md-4 mb-4">
+                    <div class="col-lg-4 col-md-6 col-12">
                         <div class="card h-100">
                             <img src="images/Continuous Photography Lighting for Camera Shooting, Video Recording.webp" class="card-img-top" alt="Lighting" loading="lazy">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Photography Lighting Kit</h5>
                                 <p class="card-text">₨ 14,000</p>
-                                <button class="btn btn-primary">Add to Cart</button>
+                                <button class="btn btn-primary w-100">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -221,6 +261,7 @@
                 </div>
             </div>
         </section>
+        
         
     </main>
 

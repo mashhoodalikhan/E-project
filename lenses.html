@@ -63,7 +63,7 @@
             <!-- Main Content -->
             <main class="col-9 main-content">
                 <div class="search-bar">
-                    <input id="search-box" type="text" placeholder="Search lenses..." oninput="searchProducts()">
+                    <input id="search-box" type="text" placeholder="Search lenses" oninput="searchProducts()">
                 </div>
                 <div class="filter-bar">
                     <select id="price-filter" onchange="filterByPrice()">
@@ -80,10 +80,9 @@
         </div>
     </div>
     
+  
     <!-- Product Section -->
-    <main>
-        <div id="product-container" class="product-container"></div>
-    </main>
+
  
     <a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20lenses." 
     target="_blank" 
@@ -288,21 +287,30 @@
 function viewProduct(productId) {
     // Redirect to the product details page with the product id in the URL
     window.location.href = `lens-details.html?id=${productId}`;
-}
+};
 
 
 
         generateProductCards(products);
 
         function searchProducts() {
-            const query = document.getElementById('search-box').value.toLowerCase();
-            const cards = document.querySelectorAll('.product-card');
+    const query = document.getElementById('search-box').value.toLowerCase();
 
-            cards.forEach(card => {
-                const name = card.querySelector('h3').textContent.toLowerCase();
-                card.style.display = name.includes(query) ? '' : 'none';
-            });
-        };
+    // Clear the container before regenerating product cards
+    container.innerHTML = "";
+
+    // Filter products based on the search query
+    const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(query)
+    );
+
+    // If no products match, show a message
+    if (filteredProducts.length === 0) {
+        container.innerHTML = "<p>No products found.</p>";
+    } else {
+        generateProductCards(filteredProducts);
+    }
+};
 
         function filterByPrice() {
             const filter = document.getElementById('price-filter').value;

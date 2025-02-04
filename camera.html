@@ -68,8 +68,9 @@
             <!-- Main Content -->
             <main class="col-9 main-content">
                 <div class="search-bar">
-                    <input id="search-box" type="text" placeholder="Search products..." oninput="searchProducts()">
+                    <input type="text" id="search-box" oninput="searchProducts()" placeholder="Search for products...">
                 </div>
+                
                 <div class="filter-bar">
                     <select id="price-filter" onchange="filterByPrice()">
                         <option value="">Filter by Price</option>
@@ -85,11 +86,6 @@
     
     
 
-    <!-- Product Section -->
-    <main>
-        <div id="product-container" class="product-container"></div>
-      
-    </main>
  
     <a href="https://wa.me/+923362823420?text=Hello!%20I%20am%20interested%20in%20your%20products." 
     target="_blank" 
@@ -354,6 +350,8 @@ function viewProduct(productId) {
             });
         };
 
+
+
         function filterByPrice() {
             const filter = document.getElementById('price-filter').value;
             const cards = document.querySelectorAll('.product-card');
@@ -381,6 +379,15 @@ function viewProduct(productId) {
         card.style.display = name.includes(brand) ? '' : 'none';
     });
 }
+function searchProducts() {
+            const query = document.getElementById('search-box').value.toLowerCase();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const name = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = name.includes(query) ? '' : 'none';
+            });
+        };
 
     </script>
 
