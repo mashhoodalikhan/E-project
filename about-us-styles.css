@@ -1,46 +1,62 @@
-
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #fff;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
 }
 
+/* 🔹 Header & Navbar */
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: #1B1F3B;
-    color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    height: 120px;
 }
 
-
+.navbar {
+    background-color: #1B1F3B;
+}
 
 .navbar-brand img {
     width: 150px;
 }
 
 .navbar-dark .nav-link {
-    color: #fff;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-dark .nav-link:hover {
     color: #FFD700;
 }
 
-.dropdown-menu a {
-color: black;
-}
-.dropdown-menu a:hover {
-    color: #FFD700;
+.dropdown-menu {
+    background-color: #1B1F3B;
+    border: none;
 }
 
+.dropdown-menu .dropdown-item {
+    color: #1B1F3B;
+}
 
-/* About Section */
+.dropdown-menu .dropdown-item:hover {
+    background-color: #FFD700;
+    color: #1B1F3B;
+}
+
+/* 🔹 About Section */
 .about-section {
     padding: 60px 0;
-    background-color: #fff;
+    background-color: #1B1F3B;
+    color: white;
 }
 
 .about-container {
@@ -55,15 +71,16 @@ color: black;
 
 .about-header h1 {
     font-size: 3rem;
-    color: #1B1F3B;
+    color: #FFD700;
+    font-weight: bold;
 }
 
 .about-header p {
     font-size: 1.2rem;
-    color: #666;
+    color: #ccc;
 }
 
-/* Overview Section */
+/* 🔹 Overview Section */
 .about-overview {
     display: flex;
     justify-content: space-between;
@@ -82,16 +99,17 @@ color: black;
 
 .about-text p {
     font-size: 1.1rem;
-    color: #555;
+    color: #ddd;
 }
 
 .about-image img {
-    width: 70%;
+    width: 100%;
+    max-width: 400px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
 }
 
-/* Timeline */
+/* 🔹 Timeline */
 .timeline {
     margin-bottom: 50px;
 }
@@ -99,7 +117,7 @@ color: black;
 .timeline h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #1B1F3B;
+    color: #FFD700;
     margin-bottom: 30px;
 }
 
@@ -113,9 +131,10 @@ color: black;
     display: flex;
     align-items: center;
     gap: 20px;
-    background: #f9f9f9;
+    background: #23274a;
     padding: 20px;
     border-radius: 10px;
+    border-left: 5px solid #FFD700;
 }
 
 .timeline-year {
@@ -126,15 +145,15 @@ color: black;
 
 .timeline-content h3 {
     font-size: 1.3rem;
-    color: #333;
+    color: white;
 }
 
 .timeline-content p {
     font-size: 1.1rem;
-    color: #666;
+    color: #ddd;
 }
 
-/* Core Values */
+/* 🔹 Core Values */
 .core-values {
     margin-bottom: 60px;
     text-align: center;
@@ -142,7 +161,7 @@ color: black;
 
 .core-values h2 {
     font-size: 2.5rem;
-    color: #1B1F3B;
+    color: #FFD700;
     margin-bottom: 40px;
 }
 
@@ -154,9 +173,9 @@ color: black;
 .value-item {
     width: 30%;
     padding: 20px;
-    background: #f9f9f9;
+    background: #23274a;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
     text-align: center;
 }
 
@@ -168,10 +187,10 @@ color: black;
 
 .value-item p {
     font-size: 1.1rem;
-    color: #555;
+    color: #ddd;
 }
 
-/* Contact Section */
+/* 🔹 Contact Section */
 .contact-section {
     text-align: center;
     margin-top: 40px;
@@ -179,20 +198,60 @@ color: black;
 
 .contact-section h2 {
     font-size: 2rem;
-    color: #1B1F3B;
+    color: #FFD700;
 }
 
 .contact-section a {
-    color:#FFD700;
+    color: #FFD700;
     text-decoration: none;
     font-weight: bold;
 }
+
+/* 🔹 Feature Cards */
+.feature-cards {
+    background-color: #1B1F3B;
+    padding: 60px 0;
+}
+
+.feature-cards .card {
+    background-color: #23274a;
+    color: white;
+    border: 1px solid #FFD700;
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+}
+
 .feature-cards .card-icon {
     font-size: 50px;
-    color: #1B1F3B; /* Change to match your brand color */
-  }
-  
-  .feature-cards .card:hover .card-icon {
-    color: #FFD700; /* Slightly darker color on hover */
-  }
-  
+    color: #FFD700;
+}
+
+.feature-cards .card:hover .card-icon {
+    color: white;
+}
+
+/* 🔹 Footer */
+footer {
+    background: #1B1F3B;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+footer h5 {
+    color: #FFD700;
+    margin-bottom: 10px;
+}
+
+footer a {
+    color: #FFD700;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: white;
+}

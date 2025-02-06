@@ -4,7 +4,7 @@ body {
     padding: 0;
     background-color: #f4f4f4;
 }
-
+/* Sticky Header with Reduced Height */
 header {
     position: sticky;
     top: 0;
@@ -12,45 +12,63 @@ header {
     background-color: #1B1F3B;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    height: 120px;
+    padding: 5px 15px; /* Reduced padding */
+    transition: all 0.3s ease-in-out;
 }
 
+/* Navbar */
+.navbar {
+    padding: 5px 0; /* Less vertical padding */
+}
+
+/* Smaller Logo */
 .navbar-brand img {
-    width: 150px;
+    width: 120px; /* Reduce logo size */
 }
 
+/* Navbar Links */
 .navbar-dark .nav-link {
     color: white;
     background-color: #1B1F3B;
+    padding: 5px 10px; /* Less padding per item */
 }
 
 .navbar-dark .nav-link:hover {
     color: #FFD700;
 }
 
-.dropdown-menu a {
+/* Dropdown Menu */
+.dropdown-menu {
+    background-color: #1B1F3B;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu .dropdown-item {
     color: white;
 }
 
-.navbar-nav .dropdown-menu {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-  color: white;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    background-color: #1B1F3B;
-}
-
-
-.navbar-nav .dropdown:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
+.dropdown-menu .dropdown-item:hover {
     background-color: #FFD700;
+    color: black;
 }
+
+/* Navbar Toggler */
+.navbar-toggler {
+    border: 1px solid white;
+    padding: 3px 6px; /* Less padding */
+    background-color: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+  
+  
 
 .custom-carousel {
     max-width: 70%;
