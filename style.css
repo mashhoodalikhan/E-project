@@ -75,13 +75,13 @@ header {
   
 
 .custom-carousel {
-    max-width: 70%;
+    max-width: 80%;
     max-height: 300px;
     margin: 0 auto;
 }
 
 .custom-carousel .carousel-inner img {
-    width: 100%;
+    width: 120%;
     height: 300px;
     object-fit: cover;
 }
