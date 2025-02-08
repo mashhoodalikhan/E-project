@@ -1,10 +1,10 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family:'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
-/* Sticky Header with Reduced Height */
+
 header {
     position: sticky;
     top: 0;
@@ -12,26 +12,33 @@ header {
     background-color: #1B1F3B;
     color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 5px 15px; /* Reduced padding */
+    padding: 5px 15px; 
     transition: all 0.3s ease-in-out;
-    height: 120px;
+    height: 120px;git add style.css
+
+    
+    height: 130px;
+
 }
 
-/* Navbar */
+
 .navbar {
-    padding: 5px 0; /* Less vertical padding */
+    padding: 5px 0; 
 }
 
-/* Smaller Logo */
+
 .navbar-brand img {
-    width: 120px; /* Reduce logo size */
+    width: 150px; 
 }
 
-/* Navbar Links */
+
 .navbar-dark .nav-link {
     color: white;
     background-color: #1B1F3B;
-    padding: 5px 10px; /* Less padding per item */
+    padding: 5px 10px; 
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: color 0.3s ease-in-out;
 }
 
 .navbar-dark .nav-link:hover {
@@ -57,7 +64,7 @@ header {
 /* Navbar Toggler */
 .navbar-toggler {
     border: 1px solid white;
-    padding: 3px 6px; /* Less padding */
+    padding: 3px 6px; 
     background-color: transparent;
 }
 
@@ -72,13 +79,13 @@ header {
   
 
 .custom-carousel {
-    max-width: 70%;
+    max-width: 80%;
     max-height: 300px;
     margin: 0 auto;
 }
 
 .custom-carousel .carousel-inner img {
-    width: 100%;
+    width: 120%;
     height: 300px;
     object-fit: cover;
 }
@@ -107,17 +114,17 @@ header {
     color: #333;
     padding: 2rem 0;
 }
-/* 📌 Featured Products Container */
+
 #featured-products .row {
     display: flex;
     justify-content: center;
     align-items: stretch;
-    flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+    flex-wrap: wrap; 
 }
 
-/* 📌 Product Card Styling */
+
 #featured-products .card {
-    max-width: 350px; /* Keeps consistent width */
+    max-width: 350px; 
     border: none;
     border-radius: 8px;
     background-color: #fff;
@@ -131,11 +138,11 @@ header {
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
 }
 
-/* 📌 Image Styling */
+
 #featured-products .card img {
     width: 100%;
     height: 200px;
-    max-height: 250px; /* Prevents images from stretching */
+    max-height: 250px; 
     object-fit: contain;
     transition: transform 0.3s ease;
 }
@@ -144,7 +151,7 @@ header {
     transform: scale(1.05);
 }
 
-/* 📌 Text Styling */
+
 #featured-products .card-body {
     padding: 15px;
     text-align: center;
@@ -170,7 +177,7 @@ header {
     margin-bottom: 10px;
 }
 
-/* 📌 Button Styling */
+
 .btn-primary, .btn-secondary {
     background-color: #1B1F3B;
     border: none;
@@ -186,7 +193,7 @@ header {
     color: #1B1F3B;
 }
 
-/* 📱 Responsive Design */
+
 @media (max-width: 992px) {
     #featured-products .card {
         max-width: 100%;
@@ -195,12 +202,12 @@ header {
 
 @media (max-width: 768px) {
     #featured-products .row {
-        flex-direction: row; /* Keep row layout */
+        flex-direction: row; 
         justify-content: center;
     }
 
     #featured-products .card {
-        width: 100%; /* Full width on mobile */
+        width: 100%; 
     }
 }
 
@@ -252,7 +259,7 @@ footer a:hover {
     height: 30px;
 }
 
-/* ✅ Responsive WhatsApp Button */
+
 @media (max-width: 480px) {
     .whatsapp-float {
         right: 10px;

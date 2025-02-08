@@ -642,63 +642,7 @@
 
     window.onload = loadProductDetails;
 
-
-
-let compareList = [];
-
-function addToCompare(id, name, price, image) {
-    console.log('addToCompare called'); // Debugging line
-    // Check if the product is already in the comparison list
-    if (compareList.find(product => product.id === id)) {
-        alert("This product is already in your comparison list.");
-        return;
-    }
-
-    // Add the product to the comparison list
-    compareList.push({ id, name, price, image });
-    console.log('Product added to comparison list:', compareList); // Debugging line
-
-    // Show the comparison section if two or more products are added
-    if (compareList.length > 1) {
-        showCompareSection();
-    }
-}
-
-function showCompareSection() {
-    console.log('showCompareSection called'); // Debugging line
-
-    const compareSection = document.getElementById("compareSection");
-    const compareContainer = document.getElementById("compareContainer");
-
-    compareContainer.innerHTML = ""; // Clear the container before adding new items
-
-    // Loop through the compare list and display products side by side
-    compareList.forEach(product => {
-        const productElement = document.createElement("div");
-        productElement.classList.add("col-md-4", "compare-item");
-        productElement.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h4>${product.name}</h4>
-            <p>$${product.price}</p>
-        `;
-        compareContainer.appendChild(productElement);
-    });
-
-    // Ensure the comparison section is shown
-    compareSection.style.display = "block"; // Show the comparison section
-    console.log('Compare section displayed'); // Debugging line
-}
-
-function clearComparison() {
-    compareList = [];
-    const compareContainer = document.getElementById("compareContainer");
-    compareContainer.innerHTML = ""; // Clear the comparison display
-    const compareSection = document.getElementById("compareSection");
-    compareSection.style.display = "none"; // Hide the comparison section
-    console.log('Comparison cleared'); // Debugging line
-}
-
-
+    
 
 </script>
 
